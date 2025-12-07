@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicaciones - MyTriboo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="light" class="smooth-scroll">
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-section">
+                <img src="public/images/logo-mytriboo.png" alt="MyTriboo Logo" class="logo">
+                <span class="logo-text">MyTriboo</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" data-translate="nav_home">Inicio</a></li>
+                <li><a href="events.html" data-translate="nav_events">Eventos</a></li>
+                <li><a href="posts.html" class="active" data-translate="nav_posts">Publicaciones</a></li>
+                <li><a href="chats.html" data-translate="nav_chats">Chats</a></li>
+                <li><a href="profile.html" data-translate="nav_profile">Perfil</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button id="accessibility-btn" class="icon-btn" aria-label="Accesibilidad">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </button>
+                
+                <button class="btn btn-primary" data-translate="btn_create_post">Crear publicación</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Accessibility Panel -->
+    <div id="accessibility-panel" class="accessibility-panel">
+        <h3 data-translate="accessibility_title">Accesibilidad</h3>
+        
+        <div style="margin-bottom: 1rem;">
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;" data-translate="theme_label">Tema</label>
+            <div class="theme-buttons">
+                <button id="theme-light" class="theme-btn active" data-translate="theme_light">☀️ Claro</button>
+                <button id="theme-dark" class="theme-btn" data-translate="theme_dark">🌙 Oscuro</button>
+            </div>
+        </div>
+
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;" data-translate="language_label">Idioma</label>
+            <select id="language-select" class="language-select">
+                <option value="es">🇪🇸 Español</option>
+                <option value="en">🇬🇧 English</option>
+                <option value="fr">🇫🇷 Français</option>
+                <option value="de">🇩🇪 Deutsch</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Posts Header -->
+    <section style="padding-top: 8rem; padding-bottom: 2rem;">
+        <div class="container">
+            <h1 style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem;" data-translate="posts_title">Tablón de Publicaciones</h1>
+            <p style="font-size: 1.25rem; opacity: 0.8; margin-bottom: 2rem;" data-translate="posts_subtitle">Comparte y descubre experiencias de tu tribu</p>
+        </div>
+    </section>
+
+    <!-- Posts Feed -->
+    <section style="padding-top: 0;">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto;">
+                
+                <!-- Post 1 -->
+                <div class="post-card" style="margin-bottom: 2rem;">
+                    <div class="post-content">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));"></div>
+                            <div>
+                                <div style="font-weight: 600;">María González</div>
+                                <div class="post-meta" style="margin: 0;">
+                                    <span>🔬 Ciencia</span>
+                                    <span>• 2h</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="post-description">¡Increíble experiencia en la conferencia de astronomía! Aprendí mucho sobre agujeros negros y pude usar un telescopio profesional. ¿Alguien más estuvo allí? 🔭✨</p>
+                        <img src="/placeholder.svg?height=300&width=600" alt="Post" class="post-image" style="margin-top: 1rem; border-radius: 12px;">
+                        <div style="display: flex; gap: 2rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--current-border);">
+                            <button style="display: flex; align-items: center; gap: 0.5rem; background: transparent; border: none; cursor: pointer; color: var(--current-text);">
+                                ❤️ <span>24 likes</span>
+                            </button>
+                            <button style="display: flex; align-items: center; gap: 0.5rem; background: transparent; border: none; cursor: pointer; color: var(--current-text);">
+                                💬 <span>8 comentarios</span>
+                            </button>
+                            <button style="display: flex; align-items: center; gap: 0.5rem; background: transparent; border: none; cursor: pointer; color: var(--current-text);">
+                                🔗 <span>Compartir</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 2 -->
+                <div class="post-card" style="margin-bottom: 2rem;">
+                    <div class="post-content">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));"></div>
+                            <div>
+                                <div style="font-weight: 600;">Carlos Ruiz</div>
+                                <div class="post-meta" style="margin: 0;">
+                                    <span>⚽ Deportes</span>
+                                    <span>• 5h</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="post-description">Gran partido esta tarde. Ganamos 5-3 y todos dieron lo mejor. ¿Quién se apunta para el próximo domingo? 🏆</p>
+                        <div style="display: flex; gap: 2rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--current-border);">
+                            <button style="display: flex; align-items: center; gap: 0.5rem; background: transparent; border: none; cursor: pointer; color: var(--current-text);">
+                                ❤️ <span>42 likes</span>
+                            </button>
+                            <button style="display: flex; align-items: center; gap: 0.5rem; background: transparent; border: none; cursor: pointer; color: var(--current-text);">
+                                💬 <span>15 comentarios</span>
+                            </button>
+                            <button style="display: flex; align-items: center; gap: 0.5rem; background: transparent; border: none; cursor: pointer; color: var(--current-text);">
+                                🔗 <span>Compartir</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 3 -->
+                <div class="post-card" style="margin-bottom: 2rem;">
+                    <div class="post-content">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));"></div>
+                            <div>
+                                <div style="font-weight: 600;">Laura Pérez</div>
+                                <div class="post-meta" style="margin: 0;">
+                                    <span>🎵 Música</span>
+                                    <span>• 1d</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="post-description">La noche de indie fue espectacular. Las tres bandas estuvieron increíbles, especialmente "Los Ecos". ¿Alguien conoce su próximo concierto? 🎸🎤</p>
+                        <img src="/placeholder.svg?height=300&width=600" alt="Post" class="post-image" style="margin-top: 1rem; border-radius: 12px;">
+                        <div style="display: flex; gap: 2rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--current-border);">
+                            <button style="display: flex; align-items: center; gap: 0.5rem; background: transparent; border: none; cursor: pointer; color: var(--current-text);">
+                                ❤️ <span>67 likes</span>
+                            </button>
+                            <button style="display: flex; align-items: center; gap: 0.5rem; background: transparent; border: none; cursor: pointer; color: var(--current-text);">
+                                💬 <span>23 comentarios</span>
+                            </button>
+                            <button style="display: flex; align-items: center; gap: 0.5rem; background: transparent; border: none; cursor: pointer; color: var(--current-text);">
+                                🔗 <span>Compartir</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 4 -->
+                <div class="post-card" style="margin-bottom: 2rem;">
+                    <div class="post-content">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));"></div>
+                            <div>
+                                <div style="font-weight: 600;">Javier Moreno</div>
+                                <div class="post-meta" style="margin: 0;">
+                                    <span>💻 Tecnología</span>
+                                    <span>• 1d</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="post-description">El workshop de IA fue muy práctico. Implementamos una red neuronal desde cero. Ahora toca seguir aprendiendo por mi cuenta. ¿Alguien recomienda recursos? 🤖💡</p>
+                        <div style="display: flex; gap: 2rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--current-border);">
+                            <button style="display: flex; align-items: center; gap: 0.5rem; background: transparent; border: none; cursor: pointer; color: var(--current-text);">
+                                ❤️ <span>31 likes</span>
+                            </button>
+                            <button style="display: flex; align-items: center; gap: 0.5rem; background: transparent; border: none; cursor: pointer; color: var(--current-text);">
+                                💬 <span>12 comentarios</span>
+                            </button>
+                            <button style="display: flex; align-items: center; gap: 0.5rem; background: transparent; border: none; cursor: pointer; color: var(--current-text);">
+                                🔗 <span>Compartir</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 5 -->
+                <div class="post-card" style="margin-bottom: 2rem;">
+                    <div class="post-content">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));"></div>
+                            <div>
+                                <div style="font-weight: 600;">Ana Martínez</div>
+                                <div class="post-meta" style="margin: 0;">
+                                    <span>📚 Literatura</span>
+                                    <span>• 2d</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="post-description">Terminé de releer "1984" para el club de lectura. Cada vez encuentro nuevas capas de significado. ¿Qué opinan sobre el final? El próximo libro será "Un mundo feliz" 📖</p>
+                        <div style="display: flex; gap: 2rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--current-border);">
+                            <button style="display: flex; align-items: center; gap: 0.5rem; background: transparent; border: none; cursor: pointer; color: var(--current-text);">
+                                ❤️ <span>19 likes</span>
+                            </button>
+                            <button style="display: flex; align-items: center; gap: 0.5rem; background: transparent; border: none; cursor: pointer; color: var(--current-text);">
+                                💬 <span>7 comentarios</span>
+                            </button>
+                            <button style="display: flex; align-items: center; gap: 0.5rem; background: transparent; border: none; cursor: pointer; color: var(--current-text);">
+                                🔗 <span>Compartir</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>MyTriboo</h3>
+                <p style="opacity: 0.7; line-height: 1.6;">Conecta con tu tribu a través de tus intereses compartidos.</p>
+            </div>
+            <div class="footer-section">
+                <h3 data-translate="footer_product">Producto</h3>
+                <ul>
+                    <li><a href="events.html" data-translate="nav_events">Eventos</a></li>
+                    <li><a href="posts.html" data-translate="nav_posts">Publicaciones</a></li>
+                    <li><a href="chats.html" data-translate="nav_chats">Chats</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 data-translate="footer_company">Compañía</h3>
+                <ul>
+                    <li><a href="#" data-translate="footer_about">Acerca de</a></li>
+                    <li><a href="#" data-translate="footer_contact">Contacto</a></li>
+                    <li><a href="#" data-translate="footer_privacy">Privacidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 data-translate="footer_social">Social</h3>
+                <ul>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 MyTriboo. <span data-translate="footer_rights">Todos los derechos reservados.</span></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
