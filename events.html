@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos - MyTriboo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="light" class="smooth-scroll">
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-section">
+                <img src="public/images/logo-mytriboo.png" alt="MyTriboo Logo" class="logo">
+                <span class="logo-text">MyTriboo</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" data-translate="nav_home">Inicio</a></li>
+                <li><a href="events.html" class="active" data-translate="nav_events">Eventos</a></li>
+                <li><a href="posts.html" data-translate="nav_posts">Publicaciones</a></li>
+                <li><a href="chats.html" data-translate="nav_chats">Chats</a></li>
+                <li><a href="profile.html" data-translate="nav_profile">Perfil</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button id="accessibility-btn" class="icon-btn" aria-label="Accesibilidad">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </button>
+                
+                <button class="btn btn-primary" data-translate="btn_create_event">Crear evento</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Accessibility Panel -->
+    <div id="accessibility-panel" class="accessibility-panel">
+        <h3 data-translate="accessibility_title">Accesibilidad</h3>
+        
+        <div style="margin-bottom: 1rem;">
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;" data-translate="theme_label">Tema</label>
+            <div class="theme-buttons">
+                <button id="theme-light" class="theme-btn active" data-translate="theme_light">☀️ Claro</button>
+                <button id="theme-dark" class="theme-btn" data-translate="theme_dark">🌙 Oscuro</button>
+            </div>
+        </div>
+
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;" data-translate="language_label">Idioma</label>
+            <select id="language-select" class="language-select">
+                <option value="es">🇪🇸 Español</option>
+                <option value="en">🇬🇧 English</option>
+                <option value="fr">🇫🇷 Français</option>
+                <option value="de">🇩🇪 Deutsch</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Events Header -->
+    <section style="padding-top: 8rem; padding-bottom: 2rem;">
+        <div class="container">
+            <h1 style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem;" data-translate="events_title">Tablón de Eventos</h1>
+            <p style="font-size: 1.25rem; opacity: 0.8; margin-bottom: 2rem;" data-translate="events_subtitle">Descubre eventos según tus intereses</p>
+            
+            <!-- Filters -->
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem;">
+                <button class="btn btn-secondary" style="padding: 0.5rem 1rem;" data-translate="filter_all">Todos</button>
+                <button class="btn btn-secondary" style="padding: 0.5rem 1rem;">🔬 Ciencia</button>
+                <button class="btn btn-secondary" style="padding: 0.5rem 1rem;">⚽ Deportes</button>
+                <button class="btn btn-secondary" style="padding: 0.5rem 1rem;">🎵 Música</button>
+                <button class="btn btn-secondary" style="padding: 0.5rem 1rem;">🎨 Arte</button>
+                <button class="btn btn-secondary" style="padding: 0.5rem 1rem;">💻 Tecnología</button>
+                <button class="btn btn-secondary" style="padding: 0.5rem 1rem;">📚 Literatura</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Grid -->
+    <section style="padding-top: 0;">
+        <div class="container">
+            <div class="grid grid-2">
+                
+                <!-- Event Card 1 -->
+                <div class="event-card">
+                    <img src="/placeholder.svg?height=200&width=400" alt="Evento" class="event-image">
+                    <div class="event-content">
+                        <span class="category-badge">🔬 Ciencia</span>
+                        <h3 class="event-title">Conferencia de Astronomía 2024</h3>
+                        <div class="event-meta">
+                            <span>📅 15 de Marzo</span>
+                            <span>📍 Madrid</span>
+                            <span>👥 45 asistentes</span>
+                        </div>
+                        <p class="event-description">Explora los últimos descubrimientos del universo con expertos internacionales. Telescopios en vivo y charlas fascinantes.</p>
+                        <button class="btn btn-primary" style="width: 100%;" data-translate="btn_view_details">Ver detalles</button>
+                    </div>
+                </div>
+
+                <!-- Event Card 2 -->
+                <div class="event-card">
+                    <img src="/placeholder.svg?height=200&width=400" alt="Evento" class="event-image">
+                    <div class="event-content">
+                        <span class="category-badge">⚽ Deportes</span>
+                        <h3 class="event-title">Partido amistoso de fútbol</h3>
+                        <div class="event-meta">
+                            <span>📅 18 de Marzo</span>
+                            <span>📍 Barcelona</span>
+                            <span>👥 22 asistentes</span>
+                        </div>
+                        <p class="event-description">Únete a nuestro partido semanal. Todos los niveles son bienvenidos. Trae tu mejor actitud y ganas de divertirte.</p>
+                        <button class="btn btn-primary" style="width: 100%;" data-translate="btn_view_details">Ver detalles</button>
+                    </div>
+                </div>
+
+                <!-- Event Card 3 -->
+                <div class="event-card">
+                    <img src="/placeholder.svg?height=200&width=400" alt="Evento" class="event-image">
+                    <div class="event-content">
+                        <span class="category-badge">🎵 Música</span>
+                        <h3 class="event-title">Noche de música indie</h3>
+                        <div class="event-meta">
+                            <span>📅 20 de Marzo</span>
+                            <span>📍 Valencia</span>
+                            <span>👥 80 asistentes</span>
+                        </div>
+                        <p class="event-description">Tres bandas locales emergentes en un ambiente íntimo. Descubre nuevos talentos y disfruta de buena música.</p>
+                        <button class="btn btn-primary" style="width: 100%;" data-translate="btn_view_details">Ver detalles</button>
+                    </div>
+                </div>
+
+                <!-- Event Card 4 -->
+                <div class="event-card">
+                    <img src="/placeholder.svg?height=200&width=400" alt="Evento" class="event-image">
+                    <div class="event-content">
+                        <span class="category-badge">🎨 Arte</span>
+                        <h3 class="event-title">Exposición de arte contemporáneo</h3>
+                        <div class="event-meta">
+                            <span>📅 22 de Marzo</span>
+                            <span>📍 Sevilla</span>
+                            <span>👥 35 asistentes</span>
+                        </div>
+                        <p class="event-description">Obras de artistas locales que desafían la percepción. Inauguraión con vino y networking.</p>
+                        <button class="btn btn-primary" style="width: 100%;" data-translate="btn_view_details">Ver detalles</button>
+                    </div>
+                </div>
+
+                <!-- Event Card 5 -->
+                <div class="event-card">
+                    <img src="/placeholder.svg?height=200&width=400" alt="Evento" class="event-image">
+                    <div class="event-content">
+                        <span class="category-badge">💻 Tecnología</span>
+                        <h3 class="event-title">Workshop de IA y Machine Learning</h3>
+                        <div class="event-meta">
+                            <span>📅 25 de Marzo</span>
+                            <span>📍 Bilbao</span>
+                            <span>👥 50 asistentes</span>
+                        </div>
+                        <p class="event-description">Aprende los fundamentos de IA con ejercicios prácticos. Trae tu portátil y prepárate para codificar.</p>
+                        <button class="btn btn-primary" style="width: 100%;" data-translate="btn_view_details">Ver detalles</button>
+                    </div>
+                </div>
+
+                <!-- Event Card 6 -->
+                <div class="event-card">
+                    <img src="/placeholder.svg?height=200&width=400" alt="Evento" class="event-image">
+                    <div class="event-content">
+                        <span class="category-badge">📚 Literatura</span>
+                        <h3 class="event-title">Club de lectura: Clásicos modernos</h3>
+                        <div class="event-meta">
+                            <span>📅 28 de Marzo</span>
+                            <span>📍 Granada</span>
+                            <span>👥 18 asistentes</span>
+                        </div>
+                        <p class="event-description">Discusión sobre "1984" de George Orwell. Café, galletas y grandes conversaciones literarias.</p>
+                        <button class="btn btn-primary" style="width: 100%;" data-translate="btn_view_details">Ver detalles</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>MyTriboo</h3>
+                <p style="opacity: 0.7; line-height: 1.6;">Conecta con tu tribu a través de tus intereses compartidos.</p>
+            </div>
+            <div class="footer-section">
+                <h3 data-translate="footer_product">Producto</h3>
+                <ul>
+                    <li><a href="events.html" data-translate="nav_events">Eventos</a></li>
+                    <li><a href="posts.html" data-translate="nav_posts">Publicaciones</a></li>
+                    <li><a href="chats.html" data-translate="nav_chats">Chats</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 data-translate="footer_company">Compañía</h3>
+                <ul>
+                    <li><a href="#" data-translate="footer_about">Acerca de</a></li>
+                    <li><a href="#" data-translate="footer_contact">Contacto</a></li>
+                    <li><a href="#" data-translate="footer_privacy">Privacidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 data-translate="footer_social">Social</h3>
+                <ul>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 MyTriboo. <span data-translate="footer_rights">Todos los derechos reservados.</span></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
