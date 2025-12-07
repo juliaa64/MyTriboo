@@ -4,155 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyTriboo - Conecta con tu tribu</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        :root {
-            --color-primary: #10b981;
-            --color-secondary: #064e3b;
-            --color-accent: #f59e0b;
-            --color-bg-light: #fefefe;
-            --color-bg-dark: #0f172a;
-            --color-text-light: #1e293b;
-            --color-text-dark: #f1f5f9;
-            --color-card-light: #ffffff;
-            --color-card-dark: #1e293b;
-        }
-
-        [data-theme="dark"] {
-            --current-bg: var(--color-bg-dark);
-            --current-text: var(--color-text-dark);
-            --current-card: var(--color-card-dark);
-        }
-
-        [data-theme="light"] {
-            --current-bg: var(--color-bg-light);
-            --current-text: var(--color-text-light);
-            --current-card: var(--color-card-light);
-        }
-
-        body {
-            background-color: var(--current-bg);
-            color: var(--current-text);
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .card {
-            background-color: var(--current-card);
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-        }
-
-        .smooth-scroll {
-            scroll-behavior: smooth;
-        }
-
-        .hero-pattern {
-            background-image: radial-gradient(circle at 1px 1px, rgba(16, 185, 129, 0.15) 1px, transparent 0);
-            background-size: 40px 40px;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .fade-in {
-            animation: fadeIn 0.6s ease-out;
-        }
-
-        .btn-primary {
-            background-color: var(--color-primary);
-            color: white;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--color-secondary);
-            transform: scale(1.05);
-        }
-
-        .accessibility-panel {
-            position: fixed;
-            top: 80px;
-            right: 20px;
-            z-index: 1000;
-            background-color: var(--current-card);
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            padding: 1.5rem;
-            min-width: 200px;
-            display: none;
-        }
-
-        .accessibility-panel.active {
-            display: block;
-        }
-
-        .icon-btn {
-            transition: transform 0.2s ease;
-        }
-
-        .icon-btn:hover {
-            transform: rotate(180deg);
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body data-theme="light" class="smooth-scroll">
     
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-opacity-90" style="background-color: var(--current-card);">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center text-white font-bold text-xl">
-                        M
-                    </div>
-                    <span class="text-2xl font-bold text-emerald-600">MyTriboo</span>
-                </div>
-                
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="#inicio" class="nav-link hover:text-emerald-600 transition-colors" data-translate="nav_home">Inicio</a>
-                    <a href="#caracteristicas" class="nav-link hover:text-emerald-600 transition-colors" data-translate="nav_features">Características</a>
-                    <a href="#como-funciona" class="nav-link hover:text-emerald-600 transition-colors" data-translate="nav_how">Cómo funciona</a>
-                    <a href="#comunidad" class="nav-link hover:text-emerald-600 transition-colors" data-translate="nav_community">Comunidad</a>
-                </div>
+    <nav>
+        <div class="nav-container">
+            <div class="logo-section">
+                <img src="public/images/logo-mytriboo.png" alt="MyTriboo Logo" class="logo">
+                <span class="logo-text">MyTriboo</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" class="active" data-translate="nav_home">Inicio</a></li>
+                <li><a href="events.html" data-translate="nav_events">Eventos</a></li>
+                <li><a href="posts.html" data-translate="nav_posts">Publicaciones</a></li>
+                <li><a href="chats.html" data-translate="nav_chats">Chats</a></li>
+                <li><a href="profile.html" data-translate="nav_profile">Perfil</a></li>
+            </ul>
 
-                <div class="flex items-center gap-4">
-                    <button id="accessibility-btn" class="icon-btn p-2 rounded-lg hover:bg-emerald-100 dark:hover:bg-emerald-900 transition-colors" aria-label="Accesibilidad">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                    </button>
-                    
-                    <button class="btn-primary px-6 py-2 rounded-full font-semibold" data-translate="btn_join">Únete ahora</button>
-                </div>
+            <div class="nav-actions">
+                <button id="accessibility-btn" class="icon-btn" aria-label="Accesibilidad">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </button>
+                
+                <button class="btn btn-primary" data-translate="btn_join">Únete ahora</button>
             </div>
         </div>
     </nav>
 
     <!-- Accessibility Panel -->
     <div id="accessibility-panel" class="accessibility-panel">
-        <h3 class="font-bold text-lg mb-4" data-translate="accessibility_title">Accesibilidad</h3>
+        <h3 data-translate="accessibility_title">Accesibilidad</h3>
         
-        <div class="mb-4">
-            <label class="block text-sm font-medium mb-2" data-translate="theme_label">Tema</label>
-            <div class="flex gap-2">
-                <button id="theme-light" class="flex-1 px-3 py-2 rounded-lg border-2 border-emerald-500 transition-colors" data-translate="theme_light">
-                    ☀️ Claro
-                </button>
-                <button id="theme-dark" class="flex-1 px-3 py-2 rounded-lg border-2 border-gray-300 transition-colors" data-translate="theme_dark">
-                    🌙 Oscuro
-                </button>
+        <div style="margin-bottom: 1rem;">
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;" data-translate="theme_label">Tema</label>
+            <div class="theme-buttons">
+                <button id="theme-light" class="theme-btn active" data-translate="theme_light">☀️ Claro</button>
+                <button id="theme-dark" class="theme-btn" data-translate="theme_dark">🌙 Oscuro</button>
             </div>
         </div>
 
         <div>
-            <label class="block text-sm font-medium mb-2" data-translate="language_label">Idioma</label>
-            <select id="language-select" class="w-full px-3 py-2 rounded-lg border-2 border-gray-300 bg-transparent">
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;" data-translate="language_label">Idioma</label>
+            <select id="language-select" class="language-select">
                 <option value="es">🇪🇸 Español</option>
                 <option value="en">🇬🇧 English</option>
                 <option value="fr">🇫🇷 Français</option>
@@ -162,686 +61,201 @@
     </div>
 
     <!-- Hero Section -->
-    <section id="inicio" class="pt-32 pb-20 hero-pattern">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
+    <section class="hero-pattern" style="padding-top: 8rem; padding-bottom: 5rem;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; align-items: center;">
                 <div class="fade-in">
-                    <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                    <h1 style="font-size: 3.5rem; font-weight: 700; line-height: 1.2; margin-bottom: 1.5rem;">
                         <span data-translate="hero_title_1">Encuentra tu</span>
-                        <span class="text-emerald-600" data-translate="hero_title_2"> tribu</span>
+                        <span class="gradient-text" data-translate="hero_title_2"> tribu</span>
                         <br>
                         <span data-translate="hero_title_3">a través de tus</span>
                         <br>
                         <span data-translate="hero_title_4">intereses</span>
                     </h1>
-                    <p class="text-xl mb-8 opacity-80 leading-relaxed" data-translate="hero_description">
+                    <p style="font-size: 1.25rem; opacity: 0.8; margin-bottom: 2rem; line-height: 1.6;" data-translate="hero_description">
                         Conecta con personas que comparten tus pasiones. Asiste a eventos temáticos, comparte experiencias y construye relaciones auténticas.
                     </p>
-                    <div class="flex flex-wrap gap-4">
-                        <button class="btn-primary px-8 py-4 rounded-full font-semibold text-lg" data-translate="btn_get_started">Comenzar gratis</button>
-                        <button class="px-8 py-4 rounded-full font-semibold text-lg border-2 border-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-950 transition-colors" data-translate="btn_learn_more">
-                            Saber más
-                        </button>
+                    <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                        <button class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.125rem;" data-translate="btn_get_started">Comenzar gratis</button>
+                        <button class="btn btn-secondary" style="padding: 1rem 2rem; font-size: 1.125rem;" data-translate="btn_learn_more">Saber más</button>
                     </div>
                     
-                    <div class="flex gap-8 mt-12">
+                    <div style="display: flex; gap: 2rem; margin-top: 3rem;">
                         <div>
-                            <div class="text-3xl font-bold text-emerald-600">50K+</div>
-                            <div class="text-sm opacity-70" data-translate="stats_users">Usuarios activos</div>
+                            <div class="gradient-text" style="font-size: 2rem; font-weight: 700;">50K+</div>
+                            <div style="font-size: 0.875rem; opacity: 0.7;" data-translate="stats_users">Usuarios activos</div>
                         </div>
                         <div>
-                            <div class="text-3xl font-bold text-emerald-600">10K+</div>
-                            <div class="text-sm opacity-70" data-translate="stats_events">Eventos creados</div>
+                            <div class="gradient-text" style="font-size: 2rem; font-weight: 700;">10K+</div>
+                            <div style="font-size: 0.875rem; opacity: 0.7;" data-translate="stats_events">Eventos creados</div>
                         </div>
                         <div>
-                            <div class="text-3xl font-bold text-emerald-600">200+</div>
-                            <div class="text-sm opacity-70" data-translate="stats_categories">Categorías</div>
+                            <div class="gradient-text" style="font-size: 2rem; font-weight: 700;">200+</div>
+                            <div style="font-size: 0.875rem; opacity: 0.7;" data-translate="stats_categories">Categorías</div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="relative">
-                    <img src="/placeholder.svg?height=600&width=600" alt="Comunidad MyTriboo" class="rounded-2xl shadow-2xl">
+                <div>
+                    <img src="/placeholder.svg?height=500&width=500" alt="Comunidad MyTriboo" style="width: 100%; border-radius: 16px; box-shadow: 0 20px 50px rgba(123, 140, 222, 0.2);">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="caracteristicas" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4" data-translate="features_title">Todo lo que necesitas</h2>
-                <p class="text-xl opacity-80" data-translate="features_subtitle">Descubre las herramientas para conectar con tu comunidad</p>
+    <section>
+        <div class="container">
+            <div style="text-center: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem; text-align: center;" data-translate="features_title">Todo lo que necesitas</h2>
+                <p style="font-size: 1.25rem; opacity: 0.8; text-align: center;" data-translate="features_subtitle">Descubre las herramientas para conectar con tu comunidad</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-3">
                 <!-- Feature 1: Events -->
-                <div class="card rounded-2xl p-8 shadow-lg">
-                    <div class="w-14 h-14 rounded-full bg-emerald-100 dark:bg-emerald-900 flex items-center justify-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
+                <div class="card">
+                    <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: white; font-size: 1.75rem;">
+                        📅
                     </div>
-                    <h3 class="text-2xl font-bold mb-3" data-translate="feature_events_title">Eventos Temáticos</h3>
-                    <p class="opacity-80 leading-relaxed" data-translate="feature_events_desc">Crea y asiste a eventos organizados según tus intereses. Desde ciencia hasta deportes, encuentra el lugar perfecto para ti.</p>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem;" data-translate="feature_events_title">Eventos Temáticos</h3>
+                    <p style="opacity: 0.8; line-height: 1.6;" data-translate="feature_events_desc">Crea y asiste a eventos organizados según tus intereses. Desde ciencia hasta deportes, encuentra el lugar perfecto para ti.</p>
                 </div>
 
                 <!-- Feature 2: Connections -->
-                <div class="card rounded-2xl p-8 shadow-lg">
-                    <div class="w-14 h-14 rounded-full bg-amber-100 dark:bg-amber-900 flex items-center justify-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
+                <div class="card">
+                    <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--color-secondary), var(--color-accent)); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: white; font-size: 1.75rem;">
+                        🤝
                     </div>
-                    <h3 class="text-2xl font-bold mb-3" data-translate="feature_connections_title">Conexiones Auténticas</h3>
-                    <p class="opacity-80 leading-relaxed" data-translate="feature_connections_desc">Construye tu red de contactos con personas afines. Sistema de conexiones inteligente con solicitudes y gestión de relaciones.</p>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem;" data-translate="feature_connections_title">Conexiones Auténticas</h3>
+                    <p style="opacity: 0.8; line-height: 1.6;" data-translate="feature_connections_desc">Construye tu red de contactos con personas afines. Sistema de conexiones inteligente.</p>
                 </div>
 
                 <!-- Feature 3: Posts -->
-                <div class="card rounded-2xl p-8 shadow-lg">
-                    <div class="w-14 h-14 rounded-full bg-emerald-100 dark:bg-emerald-900 flex items-center justify-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                        </svg>
+                <div class="card">
+                    <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: white; font-size: 1.75rem;">
+                        ✍️
                     </div>
-                    <h3 class="text-2xl font-bold mb-3" data-translate="feature_posts_title">Publicaciones</h3>
-                    <p class="opacity-80 leading-relaxed" data-translate="feature_posts_desc">Comparte reflexiones, opiniones y experiencias. Dale like a las publicaciones que te gusten y mantente conectado con tu comunidad.</p>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem;" data-translate="feature_posts_title">Publicaciones</h3>
+                    <p style="opacity: 0.8; line-height: 1.6;" data-translate="feature_posts_desc">Comparte reflexiones y experiencias. Dale like a las publicaciones que te gusten.</p>
                 </div>
 
                 <!-- Feature 4: Personalized Feed -->
-                <div class="card rounded-2xl p-8 shadow-lg">
-                    <div class="w-14 h-14 rounded-full bg-amber-100 dark:bg-amber-900 flex items-center justify-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
-                        </svg>
+                <div class="card">
+                    <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--color-secondary), var(--color-accent)); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: white; font-size: 1.75rem;">
+                        📋
                     </div>
-                    <h3 class="text-2xl font-bold mb-3" data-translate="feature_feed_title">Tablones Personalizados</h3>
-                    <p class="opacity-80 leading-relaxed" data-translate="feature_feed_desc">Descubre eventos y publicaciones relacionados con tus intereses. Tu feed personalizado te mantiene al día con lo que te importa.</p>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem;" data-translate="feature_feed_title">Tablones Personalizados</h3>
+                    <p style="opacity: 0.8; line-height: 1.6;" data-translate="feature_feed_desc">Descubre eventos y publicaciones relacionados con tus intereses.</p>
                 </div>
 
                 <!-- Feature 5: Messaging -->
-                <div class="card rounded-2xl p-8 shadow-lg">
-                    <div class="w-14 h-14 rounded-full bg-emerald-100 dark:bg-emerald-900 flex items-center justify-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                        </svg>
+                <div class="card">
+                    <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: white; font-size: 1.75rem;">
+                        💬
                     </div>
-                    <h3 class="text-2xl font-bold mb-3" data-translate="feature_messaging_title">Mensajería Completa</h3>
-                    <p class="opacity-80 leading-relaxed" data-translate="feature_messaging_desc">Chats privados y grupales. Comunícate directamente con tus conexiones o participa en conversaciones de eventos.</p>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem;" data-translate="feature_messaging_title">Mensajería Completa</h3>
+                    <p style="opacity: 0.8; line-height: 1.6;" data-translate="feature_messaging_desc">Chats privados y grupales para comunicarte con tu tribu.</p>
                 </div>
 
                 <!-- Feature 6: Interests -->
-                <div class="card rounded-2xl p-8 shadow-lg">
-                    <div class="w-14 h-14 rounded-full bg-amber-100 dark:bg-amber-900 flex items-center justify-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                        </svg>
+                <div class="card">
+                    <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--color-secondary), var(--color-accent)); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: white; font-size: 1.75rem;">
+                        ⭐
                     </div>
-                    <h3 class="text-2xl font-bold mb-3" data-translate="feature_interests_title">Múltiples Intereses</h3>
-                    <p class="opacity-80 leading-relaxed" data-translate="feature_interests_desc">Selecciona tus intereses de categorías como Ciencia, Deportes, Música y más. Personaliza tu experiencia al máximo.</p>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem;" data-translate="feature_interests_title">Múltiples Intereses</h3>
+                    <p style="opacity: 0.8; line-height: 1.6;" data-translate="feature_interests_desc">Selecciona tus intereses: Ciencia, Deportes, Música y más.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- How it Works Section -->
-    <section id="como-funciona" class="py-20 bg-emerald-50 dark:bg-slate-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4" data-translate="how_title">¿Cómo funciona?</h2>
-                <p class="text-xl opacity-80" data-translate="how_subtitle">Únete a tu tribu en 3 simples pasos</p>
+    <section style="background-color: rgba(123, 140, 222, 0.05);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem;" data-translate="how_title">¿Cómo funciona?</h2>
+                <p style="font-size: 1.25rem; opacity: 0.8;" data-translate="how_subtitle">Únete a tu tribu en 3 simples pasos</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="text-center">
-                    <div class="w-20 h-20 rounded-full bg-emerald-600 text-white text-3xl font-bold flex items-center justify-center mx-auto mb-6">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+                <div style="text-align: center;">
+                    <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; font-size: 2rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
                         1
                     </div>
-                    <h3 class="text-2xl font-bold mb-3" data-translate="step1_title">Crea tu perfil</h3>
-                    <p class="opacity-80 leading-relaxed" data-translate="step1_desc">Regístrate y selecciona tus intereses. Desde ciencia hasta deportes, personaliza tu experiencia.</p>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem;" data-translate="step1_title">Crea tu perfil</h3>
+                    <p style="opacity: 0.8; line-height: 1.6;" data-translate="step1_desc">Regístrate y selecciona tus intereses. Personaliza tu experiencia.</p>
                 </div>
 
-                <div class="text-center">
-                    <div class="w-20 h-20 rounded-full bg-amber-600 text-white text-3xl font-bold flex items-center justify-center mx-auto mb-6">
+                <div style="text-align: center;">
+                    <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--color-secondary), var(--color-accent)); color: white; font-size: 2rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
                         2
                     </div>
-                    <h3 class="text-2xl font-bold mb-3" data-translate="step2_title">Descubre y conecta</h3>
-                    <p class="opacity-80 leading-relaxed" data-translate="step2_desc">Explora eventos y publicaciones. Conecta con personas que comparten tus pasiones.</p>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem;" data-translate="step2_title">Descubre y conecta</h3>
+                    <p style="opacity: 0.8; line-height: 1.6;" data-translate="step2_desc">Explora eventos y publicaciones. Conecta con personas afines.</p>
                 </div>
 
-                <div class="text-center">
-                    <div class="w-20 h-20 rounded-full bg-emerald-600 text-white text-3xl font-bold flex items-center justify-center mx-auto mb-6">
+                <div style="text-align: center;">
+                    <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; font-size: 2rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
                         3
                     </div>
-                    <h3 class="text-2xl font-bold mb-3" data-translate="step3_title">Participa y crece</h3>
-                    <p class="opacity-80 leading-relaxed" data-translate="step3_desc">Asiste a eventos, crea contenido y construye tu red social auténtica.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Community Categories -->
-    <section id="comunidad" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4" data-translate="categories_title">Explora comunidades</h2>
-                <p class="text-xl opacity-80" data-translate="categories_subtitle">Encuentra tu tribu perfecta</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="card rounded-2xl p-6 text-center shadow-lg cursor-pointer">
-                    <div class="text-4xl mb-4">🔬</div>
-                    <h3 class="text-xl font-bold mb-2" data-translate="category_science">Ciencia</h3>
-                    <p class="text-sm opacity-70" data-translate="category_science_desc">Astronomía, Biología, Física...</p>
-                </div>
-
-                <div class="card rounded-2xl p-6 text-center shadow-lg cursor-pointer">
-                    <div class="text-4xl mb-4">⚽</div>
-                    <h3 class="text-xl font-bold mb-2" data-translate="category_sports">Deportes</h3>
-                    <p class="text-sm opacity-70" data-translate="category_sports_desc">Fútbol, Running, Yoga...</p>
-                </div>
-
-                <div class="card rounded-2xl p-6 text-center shadow-lg cursor-pointer">
-                    <div class="text-4xl mb-4">🎵</div>
-                    <h3 class="text-xl font-bold mb-2" data-translate="category_music">Música</h3>
-                    <p class="text-sm opacity-70" data-translate="category_music_desc">Rock, Jazz, Electrónica...</p>
-                </div>
-
-                <div class="card rounded-2xl p-6 text-center shadow-lg cursor-pointer">
-                    <div class="text-4xl mb-4">🎨</div>
-                    <h3 class="text-xl font-bold mb-2" data-translate="category_art">Arte</h3>
-                    <p class="text-sm opacity-70" data-translate="category_art_desc">Pintura, Fotografía, Teatro...</p>
-                </div>
-
-                <div class="card rounded-2xl p-6 text-center shadow-lg cursor-pointer">
-                    <div class="text-4xl mb-4">💻</div>
-                    <h3 class="text-xl font-bold mb-2" data-translate="category_tech">Tecnología</h3>
-                    <p class="text-sm opacity-70" data-translate="category_tech_desc">Programación, IA, Gaming...</p>
-                </div>
-
-                <div class="card rounded-2xl p-6 text-center shadow-lg cursor-pointer">
-                    <div class="text-4xl mb-4">📚</div>
-                    <h3 class="text-xl font-bold mb-2" data-translate="category_literature">Literatura</h3>
-                    <p class="text-sm opacity-70" data-translate="category_literature_desc">Novelas, Poesía, Cómics...</p>
-                </div>
-
-                <div class="card rounded-2xl p-6 text-center shadow-lg cursor-pointer">
-                    <div class="text-4xl mb-4">🍳</div>
-                    <h3 class="text-xl font-bold mb-2" data-translate="category_food">Gastronomía</h3>
-                    <p class="text-sm opacity-70" data-translate="category_food_desc">Cocina, Pastelería, Catas...</p>
-                </div>
-
-                <div class="card rounded-2xl p-6 text-center shadow-lg cursor-pointer">
-                    <div class="text-4xl mb-4">✈️</div>
-                    <h3 class="text-xl font-bold mb-2" data-translate="category_travel">Viajes</h3>
-                    <p class="text-sm opacity-70" data-translate="category_travel_desc">Aventura, Cultura, Naturaleza...</p>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem;" data-translate="step3_title">Participa y crece</h3>
+                    <p style="opacity: 0.8; line-height: 1.6;" data-translate="step3_desc">Asiste a eventos y construye tu red social auténtica.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-br from-emerald-600 to-emerald-800 text-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6" data-translate="cta_title">¿Listo para encontrar tu tribu?</h2>
-            <p class="text-xl mb-8 opacity-90" data-translate="cta_description">Únete a miles de personas que ya están conectando con sus comunidades ideales</p>
-            <button class="bg-white text-emerald-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-emerald-50 transition-all transform hover:scale-105" data-translate="cta_button">
-                Comenzar ahora - Es gratis
-            </button>
+    <section>
+        <div class="container">
+            <div class="card" style="text-align: center; padding: 4rem 2rem; background: linear-gradient(135deg, rgba(123, 140, 222, 0.1), rgba(224, 122, 122, 0.1));">
+                <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;" data-translate="cta_title">¿Listo para encontrar tu tribu?</h2>
+                <p style="font-size: 1.25rem; opacity: 0.8; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;" data-translate="cta_description">
+                    Únete a miles de personas que ya están conectando a través de sus pasiones compartidas.
+                </p>
+                <button class="btn btn-primary" style="padding: 1rem 3rem; font-size: 1.125rem;" data-translate="btn_join_now">Únete gratis ahora</button>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 border-t" style="border-color: rgba(16, 185, 129, 0.2);">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center gap-2 mb-4">
-                        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center text-white font-bold">
-                            M
-                        </div>
-                        <span class="text-xl font-bold text-emerald-600">MyTriboo</span>
-                    </div>
-                    <p class="opacity-70 text-sm" data-translate="footer_description">
-                        Conecta con tu tribu a través de intereses compartidos.
-                    </p>
-                </div>
-
-                <div>
-                    <h4 class="font-bold mb-4" data-translate="footer_product">Producto</h4>
-                    <ul class="space-y-2 text-sm opacity-70">
-                        <li><a href="#" class="hover:text-emerald-600 transition-colors" data-translate="footer_features">Características</a></li>
-                        <li><a href="#" class="hover:text-emerald-600 transition-colors" data-translate="footer_events">Eventos</a></li>
-                        <li><a href="#" class="hover:text-emerald-600 transition-colors" data-translate="footer_communities">Comunidades</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-bold mb-4" data-translate="footer_company">Empresa</h4>
-                    <ul class="space-y-2 text-sm opacity-70">
-                        <li><a href="#" class="hover:text-emerald-600 transition-colors" data-translate="footer_about">Sobre nosotros</a></li>
-                        <li><a href="#" class="hover:text-emerald-600 transition-colors" data-translate="footer_blog">Blog</a></li>
-                        <li><a href="#" class="hover:text-emerald-600 transition-colors" data-translate="footer_careers">Carreras</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-bold mb-4" data-translate="footer_legal">Legal</h4>
-                    <ul class="space-y-2 text-sm opacity-70">
-                        <li><a href="#" class="hover:text-emerald-600 transition-colors" data-translate="footer_privacy">Privacidad</a></li>
-                        <li><a href="#" class="hover:text-emerald-600 transition-colors" data-translate="footer_terms">Términos</a></li>
-                        <li><a href="#" class="hover:text-emerald-600 transition-colors" data-translate="footer_moderation">Moderación</a></li>
-                    </ul>
-                </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>MyTriboo</h3>
+                <p style="opacity: 0.7; line-height: 1.6;">Conecta con tu tribu a través de tus intereses compartidos.</p>
             </div>
-
-            <div class="mt-12 pt-8 border-t text-center text-sm opacity-70" style="border-color: rgba(16, 185, 129, 0.2);">
-                <p>&copy; 2025 MyTriboo. <span data-translate="footer_rights">Todos los derechos reservados.</span></p>
+            <div class="footer-section">
+                <h3 data-translate="footer_product">Producto</h3>
+                <ul>
+                    <li><a href="events.html" data-translate="nav_events">Eventos</a></li>
+                    <li><a href="posts.html" data-translate="nav_posts">Publicaciones</a></li>
+                    <li><a href="chats.html" data-translate="nav_chats">Chats</a></li>
+                </ul>
             </div>
-        </footer>
+            <div class="footer-section">
+                <h3 data-translate="footer_company">Compañía</h3>
+                <ul>
+                    <li><a href="#" data-translate="footer_about">Acerca de</a></li>
+                    <li><a href="#" data-translate="footer_contact">Contacto</a></li>
+                    <li><a href="#" data-translate="footer_privacy">Privacidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 data-translate="footer_social">Social</h3>
+                <ul>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 MyTriboo. <span data-translate="footer_rights">Todos los derechos reservados.</span></p>
+        </div>
     </footer>
 
-    <script>
-        // Translations
-        const translations = {
-            es: {
-                nav_home: "Inicio",
-                nav_features: "Características",
-                nav_how: "Cómo funciona",
-                nav_community: "Comunidad",
-                btn_join: "Únete ahora",
-                accessibility_title: "Accesibilidad",
-                theme_label: "Tema",
-                theme_light: "☀️ Claro",
-                theme_dark: "🌙 Oscuro",
-                language_label: "Idioma",
-                hero_title_1: "Encuentra tu",
-                hero_title_2: "tribu",
-                hero_title_3: "a través de tus",
-                hero_title_4: "intereses",
-                hero_description: "Conecta con personas que comparten tus pasiones. Asiste a eventos temáticos, comparte experiencias y construye relaciones auténticas.",
-                btn_get_started: "Comenzar gratis",
-                btn_learn_more: "Saber más",
-                stats_users: "Usuarios activos",
-                stats_events: "Eventos creados",
-                stats_categories: "Categorías",
-                features_title: "Todo lo que necesitas",
-                features_subtitle: "Descubre las herramientas para conectar con tu comunidad",
-                feature_events_title: "Eventos Temáticos",
-                feature_events_desc: "Crea y asiste a eventos organizados según tus intereses. Desde ciencia hasta deportes, encuentra el lugar perfecto para ti.",
-                feature_connections_title: "Conexiones Auténticas",
-                feature_connections_desc: "Construye tu red de contactos con personas afines. Sistema de conexiones inteligente con solicitudes y gestión de relaciones.",
-                feature_posts_title: "Publicaciones",
-                feature_posts_desc: "Comparte reflexiones, opiniones y experiencias. Dale like a las publicaciones que te gusten y mantente conectado con tu comunidad.",
-                feature_feed_title: "Tablones Personalizados",
-                feature_feed_desc: "Descubre eventos y publicaciones relacionados con tus intereses. Tu feed personalizado te mantiene al día con lo que te importa.",
-                feature_messaging_title: "Mensajería Completa",
-                feature_messaging_desc: "Chats privados y grupales. Comunícate directamente con tus conexiones o participa en conversaciones de eventos.",
-                feature_interests_title: "Múltiples Intereses",
-                feature_interests_desc: "Selecciona tus intereses de categorías como Ciencia, Deportes, Música y más. Personaliza tu experiencia al máximo.",
-                how_title: "¿Cómo funciona?",
-                how_subtitle: "Únete a tu tribu en 3 simples pasos",
-                step1_title: "Crea tu perfil",
-                step1_desc: "Regístrate y selecciona tus intereses. Desde ciencia hasta deportes, personaliza tu experiencia.",
-                step2_title: "Descubre y conecta",
-                step2_desc: "Explora eventos y publicaciones. Conecta con personas que comparten tus pasiones.",
-                step3_title: "Participa y crece",
-                step3_desc: "Asiste a eventos, crea contenido y construye tu red social auténtica.",
-                categories_title: "Explora comunidades",
-                categories_subtitle: "Encuentra tu tribu perfecta",
-                category_science: "Ciencia",
-                category_science_desc: "Astronomía, Biología, Física...",
-                category_sports: "Deportes",
-                category_sports_desc: "Fútbol, Running, Yoga...",
-                category_music: "Música",
-                category_music_desc: "Rock, Jazz, Electrónica...",
-                category_art: "Arte",
-                category_art_desc: "Pintura, Fotografía, Teatro...",
-                category_tech: "Tecnología",
-                category_tech_desc: "Programación, IA, Gaming...",
-                category_literature: "Literatura",
-                category_literature_desc: "Novelas, Poesía, Cómics...",
-                category_food: "Gastronomía",
-                category_food_desc: "Cocina, Pastelería, Catas...",
-                category_travel: "Viajes",
-                category_travel_desc: "Aventura, Cultura, Naturaleza...",
-                cta_title: "¿Listo para encontrar tu tribu?",
-                cta_description: "Únete a miles de personas que ya están conectando con sus comunidades ideales",
-                cta_button: "Comenzar ahora - Es gratis",
-                footer_description: "Conecta con tu tribu a través de intereses compartidos.",
-                footer_product: "Producto",
-                footer_features: "Características",
-                footer_events: "Eventos",
-                footer_communities: "Comunidades",
-                footer_company: "Empresa",
-                footer_about: "Sobre nosotros",
-                footer_blog: "Blog",
-                footer_careers: "Carreras",
-                footer_legal: "Legal",
-                footer_privacy: "Privacidad",
-                footer_terms: "Términos",
-                footer_moderation: "Moderación",
-                footer_rights: "Todos los derechos reservados."
-            },
-            en: {
-                nav_home: "Home",
-                nav_features: "Features",
-                nav_how: "How it works",
-                nav_community: "Community",
-                btn_join: "Join now",
-                accessibility_title: "Accessibility",
-                theme_label: "Theme",
-                theme_light: "☀️ Light",
-                theme_dark: "🌙 Dark",
-                language_label: "Language",
-                hero_title_1: "Find your",
-                hero_title_2: "tribe",
-                hero_title_3: "through your",
-                hero_title_4: "interests",
-                hero_description: "Connect with people who share your passions. Attend themed events, share experiences and build authentic relationships.",
-                btn_get_started: "Get started free",
-                btn_learn_more: "Learn more",
-                stats_users: "Active users",
-                stats_events: "Events created",
-                stats_categories: "Categories",
-                features_title: "Everything you need",
-                features_subtitle: "Discover the tools to connect with your community",
-                feature_events_title: "Themed Events",
-                feature_events_desc: "Create and attend events organized by your interests. From science to sports, find the perfect place for you.",
-                feature_connections_title: "Authentic Connections",
-                feature_connections_desc: "Build your network with like-minded people. Smart connection system with requests and relationship management.",
-                feature_posts_title: "Posts",
-                feature_posts_desc: "Share thoughts, opinions and experiences. Like posts you enjoy and stay connected with your community.",
-                feature_feed_title: "Personalized Feeds",
-                feature_feed_desc: "Discover events and posts related to your interests. Your personalized feed keeps you up to date with what matters.",
-                feature_messaging_title: "Complete Messaging",
-                feature_messaging_desc: "Private and group chats. Communicate directly with your connections or participate in event conversations.",
-                feature_interests_title: "Multiple Interests",
-                feature_interests_desc: "Select your interests from categories like Science, Sports, Music and more. Customize your experience to the max.",
-                how_title: "How does it work?",
-                how_subtitle: "Join your tribe in 3 simple steps",
-                step1_title: "Create your profile",
-                step1_desc: "Sign up and select your interests. From science to sports, customize your experience.",
-                step2_title: "Discover and connect",
-                step2_desc: "Explore events and posts. Connect with people who share your passions.",
-                step3_title: "Participate and grow",
-                step3_desc: "Attend events, create content and build your authentic social network.",
-                categories_title: "Explore communities",
-                categories_subtitle: "Find your perfect tribe",
-                category_science: "Science",
-                category_science_desc: "Astronomy, Biology, Physics...",
-                category_sports: "Sports",
-                category_sports_desc: "Football, Running, Yoga...",
-                category_music: "Music",
-                category_music_desc: "Rock, Jazz, Electronic...",
-                category_art: "Art",
-                category_art_desc: "Painting, Photography, Theater...",
-                category_tech: "Technology",
-                category_tech_desc: "Programming, AI, Gaming...",
-                category_literature: "Literature",
-                category_literature_desc: "Novels, Poetry, Comics...",
-                category_food: "Gastronomy",
-                category_food_desc: "Cooking, Pastry, Tastings...",
-                category_travel: "Travel",
-                category_travel_desc: "Adventure, Culture, Nature...",
-                cta_title: "Ready to find your tribe?",
-                cta_description: "Join thousands of people already connecting with their ideal communities",
-                cta_button: "Start now - It's free",
-                footer_description: "Connect with your tribe through shared interests.",
-                footer_product: "Product",
-                footer_features: "Features",
-                footer_events: "Events",
-                footer_communities: "Communities",
-                footer_company: "Company",
-                footer_about: "About us",
-                footer_blog: "Blog",
-                footer_careers: "Careers",
-                footer_legal: "Legal",
-                footer_privacy: "Privacy",
-                footer_terms: "Terms",
-                footer_moderation: "Moderation",
-                footer_rights: "All rights reserved."
-            },
-            fr: {
-                nav_home: "Accueil",
-                nav_features: "Fonctionnalités",
-                nav_how: "Comment ça marche",
-                nav_community: "Communauté",
-                btn_join: "Rejoignez-nous",
-                accessibility_title: "Accessibilité",
-                theme_label: "Thème",
-                theme_light: "☀️ Clair",
-                theme_dark: "🌙 Sombre",
-                language_label: "Langue",
-                hero_title_1: "Trouvez votre",
-                hero_title_2: "tribu",
-                hero_title_3: "à travers vos",
-                hero_title_4: "intérêts",
-                hero_description: "Connectez-vous avec des personnes qui partagent vos passions. Participez à des événements thématiques, partagez des expériences et construisez des relations authentiques.",
-                btn_get_started: "Commencer gratuitement",
-                btn_learn_more: "En savoir plus",
-                stats_users: "Utilisateurs actifs",
-                stats_events: "Événements créés",
-                stats_categories: "Catégories",
-                features_title: "Tout ce dont vous avez besoin",
-                features_subtitle: "Découvrez les outils pour vous connecter avec votre communauté",
-                feature_events_title: "Événements thématiques",
-                feature_events_desc: "Créez et assistez à des événements organisés selon vos intérêts. De la science au sport, trouvez l'endroit parfait pour vous.",
-                feature_connections_title: "Connexions authentiques",
-                feature_connections_desc: "Construisez votre réseau avec des personnes partageant les mêmes idées. Système de connexion intelligent avec demandes et gestion des relations.",
-                feature_posts_title: "Publications",
-                feature_posts_desc: "Partagez des réflexions, opinions et expériences. Aimez les publications qui vous plaisent et restez connecté avec votre communauté.",
-                feature_feed_title: "Fils personnalisés",
-                feature_feed_desc: "Découvrez des événements et publications liés à vos intérêts. Votre fil personnalisé vous tient au courant de ce qui compte.",
-                feature_messaging_title: "Messagerie complète",
-                feature_messaging_desc: "Chats privés et de groupe. Communiquez directement avec vos connexions ou participez aux conversations d'événements.",
-                feature_interests_title: "Intérêts multiples",
-                feature_interests_desc: "Sélectionnez vos intérêts parmi des catégories comme Science, Sport, Musique et plus. Personnalisez votre expérience au maximum.",
-                how_title: "Comment ça marche?",
-                how_subtitle: "Rejoignez votre tribu en 3 étapes simples",
-                step1_title: "Créez votre profil",
-                step1_desc: "Inscrivez-vous et sélectionnez vos intérêts. De la science au sport, personnalisez votre expérience.",
-                step2_title: "Découvrez et connectez",
-                step2_desc: "Explorez les événements et publications. Connectez-vous avec des personnes qui partagent vos passions.",
-                step3_title: "Participez et grandissez",
-                step3_desc: "Assistez à des événements, créez du contenu et construisez votre réseau social authentique.",
-                categories_title: "Explorez les communautés",
-                categories_subtitle: "Trouvez votre tribu parfaite",
-                category_science: "Science",
-                category_science_desc: "Astronomie, Biologie, Physique...",
-                category_sports: "Sport",
-                category_sports_desc: "Football, Course, Yoga...",
-                category_music: "Musique",
-                category_music_desc: "Rock, Jazz, Électronique...",
-                category_art: "Art",
-                category_art_desc: "Peinture, Photographie, Théâtre...",
-                category_tech: "Technologie",
-                category_tech_desc: "Programmation, IA, Gaming...",
-                category_literature: "Littérature",
-                category_literature_desc: "Romans, Poésie, BD...",
-                category_food: "Gastronomie",
-                category_food_desc: "Cuisine, Pâtisserie, Dégustations...",
-                category_travel: "Voyages",
-                category_travel_desc: "Aventure, Culture, Nature...",
-                cta_title: "Prêt à trouver votre tribu?",
-                cta_description: "Rejoignez des milliers de personnes qui se connectent déjà avec leurs communautés idéales",
-                cta_button: "Commencer maintenant - C'est gratuit",
-                footer_description: "Connectez-vous avec votre tribu à travers des intérêts partagés.",
-                footer_product: "Produit",
-                footer_features: "Fonctionnalités",
-                footer_events: "Événements",
-                footer_communities: "Communautés",
-                footer_company: "Entreprise",
-                footer_about: "À propos",
-                footer_blog: "Blog",
-                footer_careers: "Carrières",
-                footer_legal: "Légal",
-                footer_privacy: "Confidentialité",
-                footer_terms: "Conditions",
-                footer_moderation: "Modération",
-                footer_rights: "Tous droits réservés."
-            },
-            de: {
-                nav_home: "Startseite",
-                nav_features: "Funktionen",
-                nav_how: "Wie es funktioniert",
-                nav_community: "Gemeinschaft",
-                btn_join: "Jetzt beitreten",
-                accessibility_title: "Barrierefreiheit",
-                theme_label: "Thema",
-                theme_light: "☀️ Hell",
-                theme_dark: "🌙 Dunkel",
-                language_label: "Sprache",
-                hero_title_1: "Finde deinen",
-                hero_title_2: "Stamm",
-                hero_title_3: "durch deine",
-                hero_title_4: "Interessen",
-                hero_description: "Verbinde dich mit Menschen, die deine Leidenschaften teilen. Besuche thematische Veranstaltungen, teile Erfahrungen und baue authentische Beziehungen auf.",
-                btn_get_started: "Kostenlos starten",
-                btn_learn_more: "Mehr erfahren",
-                stats_users: "Aktive Benutzer",
-                stats_events: "Erstellte Events",
-                stats_categories: "Kategorien",
-                features_title: "Alles was du brauchst",
-                features_subtitle: "Entdecke die Werkzeuge, um dich mit deiner Community zu verbinden",
-                feature_events_title: "Thematische Events",
-                feature_events_desc: "Erstelle und besuche Events nach deinen Interessen. Von Wissenschaft bis Sport, finde den perfekten Ort für dich.",
-                feature_connections_title: "Authentische Verbindungen",
-                feature_connections_desc: "Baue dein Netzwerk mit Gleichgesinnten auf. Intelligentes Verbindungssystem mit Anfragen und Beziehungsmanagement.",
-                feature_posts_title: "Beiträge",
-                feature_posts_desc: "Teile Gedanken, Meinungen und Erfahrungen. Like Beiträge, die dir gefallen und bleibe mit deiner Community verbunden.",
-                feature_feed_title: "Personalisierte Feeds",
-                feature_feed_desc: "Entdecke Events und Beiträge zu deinen Interessen. Dein personalisierter Feed hält dich auf dem Laufenden.",
-                feature_messaging_title: "Vollständige Nachrichtenübermittlung",
-                feature_messaging_desc: "Private und Gruppenchats. Kommuniziere direkt mit deinen Verbindungen oder nimm an Event-Gesprächen teil.",
-                feature_interests_title: "Mehrere Interessen",
-                feature_interests_desc: "Wähle deine Interessen aus Kategorien wie Wissenschaft, Sport, Musik und mehr. Personalisiere deine Erfahrung maximal.",
-                how_title: "Wie funktioniert es?",
-                how_subtitle: "Tritt deinem Stamm in 3 einfachen Schritten bei",
-                step1_title: "Erstelle dein Profil",
-                step1_desc: "Registriere dich und wähle deine Interessen. Von Wissenschaft bis Sport, personalisiere deine Erfahrung.",
-                step2_title: "Entdecke und verbinde",
-                step2_desc: "Erkunde Events und Beiträge. Verbinde dich mit Menschen, die deine Leidenschaften teilen.",
-                step3_title: "Teilnehmen und wachsen",
-                step3_desc: "Besuche Events, erstelle Inhalte und baue dein authentisches soziales Netzwerk auf.",
-                categories_title: "Entdecke Communities",
-                categories_subtitle: "Finde deinen perfekten Stamm",
-                category_science: "Wissenschaft",
-                category_science_desc: "Astronomie, Biologie, Physik...",
-                category_sports: "Sport",
-                category_sports_desc: "Fußball, Laufen, Yoga...",
-                category_music: "Musik",
-                category_music_desc: "Rock, Jazz, Elektronisch...",
-                category_art: "Kunst",
-                category_art_desc: "Malerei, Fotografie, Theater...",
-                category_tech: "Technologie",
-                category_tech_desc: "Programmierung, KI, Gaming...",
-                category_literature: "Literatur",
-                category_literature_desc: "Romane, Poesie, Comics...",
-                category_food: "Gastronomie",
-                category_food_desc: "Kochen, Backen, Verkostungen...",
-                category_travel: "Reisen",
-                category_travel_desc: "Abenteuer, Kultur, Natur...",
-                cta_title: "Bereit, deinen Stamm zu finden?",
-                cta_description: "Schließe dich Tausenden an, die sich bereits mit ihren idealen Communities verbinden",
-                cta_button: "Jetzt starten - Es ist kostenlos",
-                footer_description: "Verbinde dich mit deinem Stamm durch gemeinsame Interessen.",
-                footer_product: "Produkt",
-                footer_features: "Funktionen",
-                footer_events: "Events",
-                footer_communities: "Communities",
-                footer_company: "Unternehmen",
-                footer_about: "Über uns",
-                footer_blog: "Blog",
-                footer_careers: "Karriere",
-                footer_legal: "Rechtliches",
-                footer_privacy: "Datenschutz",
-                footer_terms: "Bedingungen",
-                footer_moderation: "Moderation",
-                footer_rights: "Alle Rechte vorbehalten."
-            }
-        };
-
-        let currentLanguage = 'es';
-
-        // Function to update translations
-        function updateTranslations(lang) {
-            const elements = document.querySelectorAll('[data-translate]');
-            elements.forEach(element => {
-                const key = element.getAttribute('data-translate');
-                if (translations[lang] && translations[lang][key]) {
-                    element.textContent = translations[lang][key];
-                }
-            });
-            currentLanguage = lang;
-            localStorage.setItem('language', lang);
-        }
-
-        // Theme management
-        const accessibilityBtn = document.getElementById('accessibility-btn');
-        const accessibilityPanel = document.getElementById('accessibility-panel');
-        const themeLightBtn = document.getElementById('theme-light');
-        const themeDarkBtn = document.getElementById('theme-dark');
-        const languageSelect = document.getElementById('language-select');
-
-        // Toggle accessibility panel
-        accessibilityBtn.addEventListener('click', () => {
-            accessibilityPanel.classList.toggle('active');
-        });
-
-        // Close panel when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!accessibilityPanel.contains(e.target) && !accessibilityBtn.contains(e.target)) {
-                accessibilityPanel.classList.remove('active');
-            }
-        });
-
-        // Theme switcher
-        function setTheme(theme) {
-            document.body.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme);
-            
-            if (theme === 'light') {
-                themeLightBtn.style.borderColor = 'var(--color-primary)';
-                themeDarkBtn.style.borderColor = '#d1d5db';
-            } else {
-                themeDarkBtn.style.borderColor = 'var(--color-primary)';
-                themeLightBtn.style.borderColor = '#d1d5db';
-            }
-        }
-
-        themeLightBtn.addEventListener('click', () => setTheme('light'));
-        themeDarkBtn.addEventListener('click', () => setTheme('dark'));
-
-        // Language switcher
-        languageSelect.addEventListener('change', (e) => {
-            updateTranslations(e.target.value);
-        });
-
-        // Load saved preferences
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            const savedLanguage = localStorage.getItem('language') || 'es';
-            
-            setTheme(savedTheme);
-            languageSelect.value = savedLanguage;
-            updateTranslations(savedLanguage);
-        });
-
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
