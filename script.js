@@ -204,6 +204,8 @@ const translations = {
     created_by_you_badge: "★ Creado por ti",
     // Connections
     friends_since: "Amigos desde",
+    connection1_date: "Mayo 2024",
+    connection2_date: "Enero 2025",
     // Chats
     chat1_name: "María González",
     chat1_preview: "¡Gracias por venir al evento! 🔬",
@@ -438,6 +440,8 @@ const translations = {
     created_by_you_badge: "★ Created by you",
     // Connections
     friends_since: "Friends since",
+    connection1_date: "May 2024",
+    connection2_date: "January 2025",
     // Chats
     chat1_name: "María González",
     chat1_preview: "Thanks for coming to the event! 🔬",
@@ -671,6 +675,8 @@ const translations = {
     created_by_you_badge: "★ Créé par vous",
     // Connections
     friends_since: "Amis depuis",
+    connection1_date: "Mai 2024",
+    connection2_date: "Janvier 2025",
     // Chats
     chat1_name: "María González",
     chat1_preview: "Merci d'être venu à l'événement! 🔬",
@@ -904,6 +910,8 @@ const translations = {
     created_by_you_badge: "★ Von Ihnen erstellt",
     // Connections
     friends_since: "Freunde seit",
+    connection1_date: "Mai 2024",
+    connection2_date: "Januar 2025",
     // Chats
     chat1_name: "María González",
     chat1_preview: "Danke fürs Kommen zur Veranstaltung! 🔬",
