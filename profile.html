@@ -143,15 +143,41 @@
             <div id="tab-events" class="tab-content" style="display: none;">
                 <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem;" data-translate="my_events_title">Gestiona tus eventos</h2>
                 
-                <div style="margin-bottom: 2rem;">
+                <div style="margin-bottom: 2rem; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
                     <button class="btn btn-primary" data-translate="btn_create_new_event">Crear nuevo evento</button>
+                    
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button class="btn btn-secondary profile-event-filter active" data-filter="all" data-translate="filter_all_events">Todos</button>
+                        <button class="btn btn-secondary profile-event-filter" data-filter="created" data-translate="filter_created_by_me">Creados por mí</button>
+                        <button class="btn btn-secondary profile-event-filter" data-filter="attending" data-translate="filter_attending">Asistiré</button>
+                    </div>
                 </div>
 
                 <div class="grid grid-2">
-                    <!-- Event Card Example -->
-                    <div class="event-card">
-                        <img src="/placeholder.svg?height=200&width=400" alt="Evento" class="event-image">
+                    <!-- Event Card - Asistiendo (10 de Febrero) -->
+                    <div class="event-card profile-event-item" data-event-type="attending" data-event-date="2025-02-10">
+                        <img src="images/musica.png" alt="Evento" class="event-image">
                         <div class="event-content">
+                            <span class="category-badge" style="background: #f59e0b; color: white; margin-bottom: 0.5rem;">✓ Asistiré</span>
+                            <span class="category-badge">🎵 Música</span>
+                            <h3 class="event-title">Festival de Jazz en Vivo</h3>
+                            <div class="event-meta">
+                                <span>📅 10 de Febrero</span>
+                                <span>👥 120 asistentes</span>
+                            </div>
+                            <p class="event-description">Noche de jazz con artistas internacionales en un ambiente único.</p>
+                            <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                                <button class="btn btn-secondary" style="flex: 1;" data-translate="btn_view_details">Ver detalles</button>
+                                <button class="btn btn-secondary" style="flex: 1;" data-translate="btn_cancel_attendance">Cancelar asistencia</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event Card - Creado por el usuario (15 de Marzo) -->
+                    <div class="event-card profile-event-item" data-event-type="created" data-event-date="2025-03-15">
+                        <img src="images/astronomia.png" alt="Evento" class="event-image">
+                        <div class="event-content">
+                            <span class="category-badge" style="background: var(--color-primary); color: white; margin-bottom: 0.5rem;">★ Creado por ti</span>
                             <span class="category-badge">🔬 Ciencia</span>
                             <h3 class="event-title">Conferencia de Astronomía 2024</h3>
                             <div class="event-meta">
@@ -164,13 +190,6 @@
                                 <button class="btn btn-secondary" style="flex: 1;" data-translate="btn_delete">Eliminar</button>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Empty state for more events -->
-                    <div class="card" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 300px; text-align: center;">
-                        <div style="font-size: 3rem; margin-bottom: 1rem;">📅</div>
-                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;" data-translate="no_more_events">Sin más eventos</h3>
-                        <p style="opacity: 0.7;" data-translate="create_first_event">Crea tu primer evento para tu triboo</p>
                     </div>
                 </div>
             </div>

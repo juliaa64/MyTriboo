@@ -91,6 +91,10 @@ const translations = {
     btn_create_new_post: "Crear nueva publicación",
     no_more_posts: "Sin más publicaciones",
     share_thoughts: "Comparte tus pensamientos con tu triboo",
+    filter_all_events: "Todos",
+    filter_created_by_me: "Creados por mí",
+    filter_attending: "Asistiré",
+    btn_cancel_attendance: "Cancelar asistencia",
   },
   en: {
     nav_home: "Home",
@@ -181,6 +185,10 @@ const translations = {
     btn_create_new_post: "Create new post",
     no_more_posts: "No more posts",
     share_thoughts: "Share your thoughts with your triboo",
+    filter_all_events: "All",
+    filter_created_by_me: "Created by me",
+    filter_attending: "Attending",
+    btn_cancel_attendance: "Cancel attendance",
   },
   fr: {
     nav_home: "Accueil",
@@ -213,6 +221,10 @@ const translations = {
     features_subtitle: "Découvrez les outils pour vous connecter avec votre communauté",
     footer_rights: "Tous droits réservés.",
     btn_sign_up: "S'inscrire",
+    filter_all_events: "Tous",
+    filter_created_by_me: "Créés par moi",
+    filter_attending: "Je participe",
+    btn_cancel_attendance: "Annuler la participation",
   },
   de: {
     nav_home: "Startseite",
@@ -245,6 +257,10 @@ const translations = {
     features_subtitle: "Entdecken Sie die Tools, um sich mit Ihrer Community zu verbinden",
     footer_rights: "Alle Rechte vorbehalten.",
     btn_sign_up: "Anmelden",
+    filter_all_events: "Alle",
+    filter_created_by_me: "Von mir erstellt",
+    filter_attending: "Teilnehmen",
+    btn_cancel_attendance: "Teilnahme absagen",
   },
 }
 
@@ -391,6 +407,55 @@ document.addEventListener("DOMContentLoaded", () => {
           } else {
             card.style.display = "none"
             card.style.opacity = "0"
+          }
+        })
+      })
+    })
+  }
+
+  // --- FILTRADO DE EVENTOS DE PERFIL ---
+  const profileEventFilters = document.querySelectorAll(".profile-event-filter")
+  const profileEventItems = document.querySelectorAll(".profile-event-item")
+
+  if (profileEventFilters.length > 0 && profileEventItems.length > 0) {
+    // Ordenar eventos por fecha al cargar
+    const eventsContainer = profileEventItems[0]?.parentElement
+    if (eventsContainer) {
+      const sortedEvents = Array.from(profileEventItems).sort((a, b) => {
+        const dateA = new Date(a.getAttribute("data-event-date"))
+        const dateB = new Date(b.getAttribute("data-event-date"))
+        return dateA - dateB
+      })
+      sortedEvents.forEach(event => eventsContainer.appendChild(event))
+    }
+
+    profileEventFilters.forEach((button) => {
+      button.addEventListener("click", () => {
+        const filter = button.getAttribute("data-filter")
+
+        // Actualizar estilos de botones
+        profileEventFilters.forEach((btn) => {
+          btn.classList.remove("active")
+          btn.classList.remove("btn-primary")
+          btn.classList.add("btn-secondary")
+        })
+        button.classList.add("active")
+        button.classList.remove("btn-secondary")
+        button.classList.add("btn-primary")
+
+        // Filtrar eventos
+        profileEventItems.forEach((item) => {
+          const eventType = item.getAttribute("data-event-type")
+          
+          if (filter === "all") {
+            item.style.display = ""
+            item.style.opacity = "1"
+          } else if (filter === eventType) {
+            item.style.display = ""
+            item.style.opacity = "1"
+          } else {
+            item.style.display = "none"
+            item.style.opacity = "0"
           }
         })
       })
