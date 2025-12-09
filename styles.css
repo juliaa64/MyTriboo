@@ -442,6 +442,7 @@ section {
   background-color: var(--current-card);
   color: var(--current-text);
   font-family: inherit;
+  font-size: 1rem;
   transition: border-color 0.3s ease;
 }
 
