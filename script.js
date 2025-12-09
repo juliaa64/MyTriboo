@@ -348,7 +348,7 @@ document.addEventListener("DOMContentLoaded", () => {
         eventCards.forEach((card) => {
           // Si es "all" o la categoría coincide, mostramos. Si no, ocultamos.
           if (category === "all" || card.getAttribute("data-category") === category) {
-            card.style.display = "block"
+            card.style.display = ""
             // Animación suave de entrada
             card.style.opacity = "0"
             card.animate([{ opacity: 0 }, { opacity: 1 }], {
