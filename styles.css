@@ -659,11 +659,21 @@ section {
   .tab {
     padding: 0.75rem 1rem;
     font-size: 0.95rem;
+    white-space: nowrap;
   }
 
   .tabs {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    gap: 0.5rem;
+  }
+
+  /* Profile header responsive */
+  section div[style*="width: 120px; height: 120px"] {
+    width: 80px !important;
+    height: 80px !important;
+    min-width: 80px;
+    flex-shrink: 0;
   }
 
   /* Event and post cards */
@@ -746,8 +756,26 @@ section {
   }
 
   .tab {
-    padding: 0.6rem 0.75rem;
-    font-size: 0.875rem;
+    padding: 0.6rem 0.6rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  /* Profile header adjustments */
+  section div[style*="width: 120px; height: 120px"] {
+    width: 60px !important;
+    height: 60px !important;
+    min-width: 60px;
+    flex-shrink: 0;
+  }
+
+  section div[style*="display: flex; align-items: center; gap: 2rem"] {
+    gap: 1rem !important;
+  }
+
+  section div[style*="display: flex; gap: 2rem"] {
+    gap: 1rem !important;
+    flex-wrap: wrap;
   }
 
   .btn {
@@ -813,6 +841,13 @@ section {
 
   h1 {
     font-size: 1.5rem !important;
+  }
+
+  /* Profile avatar extra small */
+  section div[style*="width: 120px; height: 120px"] {
+    width: 50px !important;
+    height: 50px !important;
+    min-width: 50px;
   }
 
   .logo-text {
