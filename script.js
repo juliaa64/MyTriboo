@@ -309,6 +309,32 @@ document.addEventListener("DOMContentLoaded", () => {
   setTheme(savedTheme)
   setLanguage(savedLanguage)
 
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById("mobile-menu-btn")
+  const mobileMenu = document.getElementById("mobile-menu")
+
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener("click", (e) => {
+      e.stopPropagation()
+      mobileMenu.classList.toggle("active")
+    })
+
+    // Close mobile menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        mobileMenu.classList.remove("active")
+      }
+    })
+
+    // Close mobile menu when clicking a link
+    const mobileNavLinks = mobileMenu.querySelectorAll("a")
+    mobileNavLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("active")
+      })
+    })
+  }
+
   // Accessibility panel toggle
   const accessibilityBtn = document.getElementById("accessibility-btn")
   const accessibilityPanel = document.getElementById("accessibility-panel")

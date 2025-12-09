@@ -12,8 +12,10 @@
     <nav>
         <div class="nav-container">
             <div class="logo-section">
-                <img src="images/Logo_sinFondo.png" alt="MyTriboo Logo" class="logo">
-                <span class="logo-text">MyTriboo</span>
+                <a href="index.html" style="display: flex; align-items: center; gap: 1rem; text-decoration: none;">
+                    <img src="images/Logo_sinFondo.png" alt="MyTriboo Logo" class="logo">
+                    <span class="logo-text">MyTriboo</span>
+                </a>
             </div>
             
             <ul class="nav-links">
@@ -33,9 +35,28 @@
                 </button>
                 
                 <button class="btn btn-primary" data-translate="btn_logout">Cerrar sesión</button>
+                
+                <button id="mobile-menu-btn" class="icon-btn mobile-menu-btn" aria-label="Menú">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+        <div class="mobile-menu-content">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html" data-translate="nav_home">Inicio</a></li>
+                <li><a href="events.html" data-translate="nav_events">Eventos</a></li>
+                <li><a href="posts.html" data-translate="nav_posts">Publicaciones</a></li>
+                <li><a href="chats.html" data-translate="nav_chats">Chats</a></li>
+                <li><a href="profile.html" class="active" data-translate="nav_profile">Perfil</a></li>
+            </ul>
+        </div>
+    </div>
 
     <!-- Accessibility Panel -->
     <div id="accessibility-panel" class="accessibility-panel">
