@@ -120,8 +120,111 @@
                     </div>
                 </div>
                 
-                <div>
-                    <img src="/placeholder.svg?height=500&width=500" alt="Comunidad MyTriboo" style="width: 100%; border-radius: 16px; box-shadow: 0 20px 50px rgba(123, 140, 222, 0.2);">
+                <div style="position: relative;">
+                    <!-- Animated Connections Network -->
+                    <svg viewBox="0 0 500 500" style="width: 100%; max-width: 500px; height: auto; filter: drop-shadow(0 20px 50px rgba(123, 140, 222, 0.2));">
+                        <defs>
+                            <!-- Gradients -->
+                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#7B8CDE;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#E85D75;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#E85D75;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#FFA94D;stop-opacity:1" />
+                            </linearGradient>
+                            
+                            <!-- Animated line paths -->
+                            <style>
+                                .connection-line {
+                                    stroke-width: 2;
+                                    stroke-linecap: round;
+                                    opacity: 0;
+                                    animation: fadeInLine 3s ease-in-out infinite;
+                                }
+                                .node-circle {
+                                    animation: pulse 2s ease-in-out infinite;
+                                    transform-origin: center;
+                                }
+                                .node-icon {
+                                    animation: float 3s ease-in-out infinite;
+                                }
+                                
+                                @keyframes fadeInLine {
+                                    0%, 100% { opacity: 0; stroke-dashoffset: 100; }
+                                    50% { opacity: 0.6; stroke-dashoffset: 0; }
+                                }
+                                @keyframes pulse {
+                                    0%, 100% { transform: scale(1); }
+                                    50% { transform: scale(1.1); }
+                                }
+                                @keyframes float {
+                                    0%, 100% { transform: translateY(0px); }
+                                    50% { transform: translateY(-10px); }
+                                }
+                            </style>
+                        </defs>
+                        
+                        <!-- Connection Lines -->
+                        <line class="connection-line" x1="100" y1="100" x2="250" y2="150" stroke="url(#grad1)" stroke-dasharray="100" style="animation-delay: 0s;" />
+                        <line class="connection-line" x1="100" y1="100" x2="150" y2="250" stroke="url(#grad1)" stroke-dasharray="100" style="animation-delay: 0.5s;" />
+                        <line class="connection-line" x1="250" y1="150" x2="400" y2="100" stroke="url(#grad2)" stroke-dasharray="100" style="animation-delay: 1s;" />
+                        <line class="connection-line" x1="250" y1="150" x2="350" y2="300" stroke="url(#grad1)" stroke-dasharray="100" style="animation-delay: 1.5s;" />
+                        <line class="connection-line" x1="150" y1="250" x2="250" y2="350" stroke="url(#grad2)" stroke-dasharray="100" style="animation-delay: 0.8s;" />
+                        <line class="connection-line" x1="150" y1="250" x2="350" y2="300" stroke="url(#grad1)" stroke-dasharray="100" style="animation-delay: 1.2s;" />
+                        <line class="connection-line" x1="400" y1="100" x2="350" y2="300" stroke="url(#grad2)" stroke-dasharray="100" style="animation-delay: 2s;" />
+                        <line class="connection-line" x1="350" y1="300" x2="250" y2="350" stroke="url(#grad1)" stroke-dasharray="100" style="animation-delay: 2.5s;" />
+                        <line class="connection-line" x1="250" y1="350" x2="150" y2="400" stroke="url(#grad2)" stroke-dasharray="100" style="animation-delay: 1.8s;" />
+                        <line class="connection-line" x1="400" y1="100" x2="400" y2="400" stroke="url(#grad1)" stroke-dasharray="100" style="animation-delay: 2.2s;" />
+                        
+                        <!-- Node 1: Science -->
+                        <g class="node-circle" style="animation-delay: 0s;">
+                            <circle cx="100" cy="100" r="35" fill="url(#grad1)" opacity="0.9"/>
+                            <text x="100" y="110" text-anchor="middle" font-size="28" class="node-icon" style="animation-delay: 0s;">🔬</text>
+                        </g>
+                        
+                        <!-- Node 2: Center Hub -->
+                        <g class="node-circle" style="animation-delay: 0.3s;">
+                            <circle cx="250" cy="150" r="40" fill="url(#grad2)" opacity="0.9"/>
+                            <text x="250" y="160" text-anchor="middle" font-size="32" class="node-icon" style="animation-delay: 0.3s;">❤️</text>
+                        </g>
+                        
+                        <!-- Node 3: Sports -->
+                        <g class="node-circle" style="animation-delay: 0.6s;">
+                            <circle cx="400" cy="100" r="35" fill="url(#grad1)" opacity="0.9"/>
+                            <text x="400" y="110" text-anchor="middle" font-size="28" class="node-icon" style="animation-delay: 0.6s;">⚽</text>
+                        </g>
+                        
+                        <!-- Node 4: Art -->
+                        <g class="node-circle" style="animation-delay: 0.9s;">
+                            <circle cx="150" cy="250" r="35" fill="url(#grad2)" opacity="0.9"/>
+                            <text x="150" y="260" text-anchor="middle" font-size="28" class="node-icon" style="animation-delay: 0.9s;">🎨</text>
+                        </g>
+                        
+                        <!-- Node 5: Tech -->
+                        <g class="node-circle" style="animation-delay: 1.2s;">
+                            <circle cx="350" cy="300" r="35" fill="url(#grad1)" opacity="0.9"/>
+                            <text x="350" y="310" text-anchor="middle" font-size="28" class="node-icon" style="animation-delay: 1.2s;">💻</text>
+                        </g>
+                        
+                        <!-- Node 6: Music -->
+                        <g class="node-circle" style="animation-delay: 1.5s;">
+                            <circle cx="250" cy="350" r="35" fill="url(#grad2)" opacity="0.9"/>
+                            <text x="250" y="360" text-anchor="middle" font-size="28" class="node-icon" style="animation-delay: 1.5s;">🎵</text>
+                        </g>
+                        
+                        <!-- Node 7: Books -->
+                        <g class="node-circle" style="animation-delay: 1.8s;">
+                            <circle cx="150" cy="400" r="30" fill="url(#grad1)" opacity="0.9"/>
+                            <text x="150" y="408" text-anchor="middle" font-size="24" class="node-icon" style="animation-delay: 1.8s;">📚</text>
+                        </g>
+                        
+                        <!-- Node 8: Cinema -->
+                        <g class="node-circle" style="animation-delay: 2.1s;">
+                            <circle cx="400" cy="400" r="30" fill="url(#grad2)" opacity="0.9"/>
+                            <text x="400" y="408" text-anchor="middle" font-size="24" class="node-icon" style="animation-delay: 2.1s;">🎬</text>
+                        </g>
+                    </svg>
                 </div>
             </div>
         </div>
