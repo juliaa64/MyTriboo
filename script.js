@@ -66,6 +66,7 @@ const translations = {
     events_subtitle: "Descubre eventos según tus intereses",
     filter_all: "Todos",
     btn_view_details: "Ver detalles",
+    btn_sign_up: "Apuntarse",
     posts_title: "Tablón de Publicaciones",
     posts_subtitle: "Comparte y descubre experiencias de tu triboo",
     chats_title: "Mensajes",
@@ -155,6 +156,7 @@ const translations = {
     events_subtitle: "Discover events based on your interests",
     filter_all: "All",
     btn_view_details: "View details",
+    btn_sign_up: "Sign up",
     posts_title: "Posts Board",
     posts_subtitle: "Share and discover experiences from your triboo",
     chats_title: "Messages",
@@ -210,6 +212,7 @@ const translations = {
     features_title: "Tout ce dont vous avez besoin",
     features_subtitle: "Découvrez les outils pour vous connecter avec votre communauté",
     footer_rights: "Tous droits réservés.",
+    btn_sign_up: "S'inscrire",
   },
   de: {
     nav_home: "Startseite",
@@ -241,6 +244,7 @@ const translations = {
     features_title: "Alles, was Sie brauchen",
     features_subtitle: "Entdecken Sie die Tools, um sich mit Ihrer Community zu verbinden",
     footer_rights: "Alle Rechte vorbehalten.",
+    btn_sign_up: "Anmelden",
   },
 }
 
