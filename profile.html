@@ -94,6 +94,7 @@
                 <button class="tab active" data-tab="profile" data-translate="tab_profile">Perfil</button>
                 <button class="tab" data-tab="events" data-translate="tab_my_events">Mis eventos</button>
                 <button class="tab" data-tab="posts" data-translate="tab_my_posts">Mis publicaciones</button>
+                <button class="tab" data-tab="connections" data-translate="tab_my_connections">Mis conexiones</button>
             </div>
 
             <!-- Tab: Profile -->
@@ -143,14 +144,14 @@
             <div id="tab-events" class="tab-content" style="display: none;">
                 <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem;" data-translate="my_events_title">Gestiona tus eventos</h2>
                 
-                <div style="margin-bottom: 2rem; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                <div style="margin-bottom: 1rem;">
                     <button class="btn btn-primary" data-translate="btn_create_new_event">Crear nuevo evento</button>
-                    
-                    <div style="display: flex; gap: 0.5rem;">
-                        <button class="btn btn-primary profile-event-filter active" data-filter="all" data-translate="filter_all_events">Todos</button>
-                        <button class="btn btn-secondary profile-event-filter" data-filter="created" data-translate="filter_created_by_me">Creados por mí</button>
-                        <button class="btn btn-secondary profile-event-filter" data-filter="attending" data-translate="filter_attending">Asistiré</button>
-                    </div>
+                </div>
+                
+                <div style="margin-bottom: 2rem; display: flex; gap: 0.5rem;">
+                    <button class="btn btn-primary profile-event-filter active" data-filter="all" data-translate="filter_all_events">Todos</button>
+                    <button class="btn btn-secondary profile-event-filter" data-filter="created" data-translate="filter_created_by_me">Creados por mí</button>
+                    <button class="btn btn-secondary profile-event-filter" data-filter="attending" data-translate="filter_attending">Asistiré</button>
                 </div>
 
                 <div class="grid grid-2">
@@ -189,6 +190,90 @@
                                 <button class="btn btn-secondary" style="flex: 1;" data-translate="btn_edit">Editar</button>
                                 <button class="btn btn-secondary" style="flex: 1;" data-translate="btn_delete">Eliminar</button>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: My Connections -->
+            <div id="tab-connections" class="tab-content" style="display: none;">
+                <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem;" data-translate="my_connections_title">Mis conexiones</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <!-- Columna: Conexiones -->
+                    <div>
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: var(--color-primary);" data-translate="connections_active">Conexiones</h3>
+                        
+                        <!-- Conexión 1 -->
+                        <div class="card" style="margin-bottom: 1rem; padding: 1.25rem;">
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));"></div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; font-size: 1rem;">María González</div>
+                                    <div style="opacity: 0.7; font-size: 0.875rem;">@mariag</div>
+                                    <div style="opacity: 0.6; font-size: 0.75rem; margin-top: 0.25rem;">🔗 Amigos desde Mayo 2024</div>
+                                </div>
+                            </div>
+                            <button class="btn btn-secondary" style="width: 100%;" data-translate="btn_unfollow">Dejar de seguir</button>
+                        </div>
+                        
+                        <!-- Conexión 2 -->
+                        <div class="card" style="margin-bottom: 1rem; padding: 1.25rem;">
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));"></div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; font-size: 1rem;">Carlos Martínez</div>
+                                    <div style="opacity: 0.7; font-size: 0.875rem;">@carlosm</div>
+                                    <div style="opacity: 0.6; font-size: 0.75rem; margin-top: 0.25rem;">🔗 Amigos desde Enero 2025</div>
+                                </div>
+                            </div>
+                            <button class="btn btn-secondary" style="width: 100%;" data-translate="btn_unfollow">Dejar de seguir</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Columna: Pendientes -->
+                    <div>
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: #f59e0b;" data-translate="connections_pending">Pendientes</h3>
+                        
+                        <!-- Solicitud pendiente 1 -->
+                        <div class="card" style="margin-bottom: 1rem; padding: 1.25rem;">
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #f59e0b, #ef4444);"></div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; font-size: 1rem;">Laura Sánchez</div>
+                                    <div style="opacity: 0.7; font-size: 0.875rem;">@lauras</div>
+                                </div>
+                            </div>
+                            <button class="btn btn-secondary" style="width: 100%;" data-translate="btn_cancel_request">Cancelar solicitud</button>
+                        </div>
+                        
+                        <!-- Solicitud pendiente 2 -->
+                        <div class="card" style="margin-bottom: 1rem; padding: 1.25rem;">
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #8b5cf6, #ec4899);"></div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; font-size: 1rem;">Pedro López</div>
+                                    <div style="opacity: 0.7; font-size: 0.875rem;">@pedrol</div>
+                                </div>
+                            </div>
+                            <button class="btn btn-secondary" style="width: 100%;" data-translate="btn_cancel_request">Cancelar solicitud</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Columna: Bloqueados -->
+                    <div>
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: #ef4444;" data-translate="connections_blocked">Bloqueados</h3>
+                        
+                        <!-- Usuario bloqueado 1 -->
+                        <div class="card" style="margin-bottom: 1rem; padding: 1.25rem;">
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #6b7280, #1f2937);"></div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; font-size: 1rem;">Ana Ruiz</div>
+                                    <div style="opacity: 0.7; font-size: 0.875rem;">@anaruiz</div>
+                                </div>
+                            </div>
+                            <button class="btn btn-secondary" style="width: 100%;" data-translate="btn_unblock">Desbloquear</button>
                         </div>
                     </div>
                 </div>
