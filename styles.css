@@ -532,6 +532,34 @@ section {
   min-height: 100px;
 }
 
+/* Profile Header */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  min-width: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  flex-shrink: 0;
+}
+
+.profile-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.profile-stats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
 /* Tabs */
 .tabs {
   display: flex;
@@ -668,12 +696,26 @@ section {
     gap: 0.5rem;
   }
 
-  /* Profile header responsive */
-  section div[style*="width: 120px; height: 120px"] {
-    width: 80px !important;
-    height: 80px !important;
-    min-width: 80px;
+  .tab {
+    padding: 0.75rem 0.75rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
     flex-shrink: 0;
+  }
+
+  /* Profile header responsive */
+  .profile-header {
+    gap: 1.5rem;
+  }
+
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+  }
+
+  .profile-stats {
+    gap: 1rem;
   }
 
   /* Event and post cards */
@@ -756,26 +798,27 @@ section {
   }
 
   .tab {
-    padding: 0.6rem 0.6rem;
-    font-size: 0.8rem;
+    padding: 0.6rem 0.5rem;
+    font-size: 0.75rem;
     white-space: nowrap;
-  }
-
-  /* Profile header adjustments */
-  section div[style*="width: 120px; height: 120px"] {
-    width: 60px !important;
-    height: 60px !important;
-    min-width: 60px;
     flex-shrink: 0;
   }
 
-  section div[style*="display: flex; align-items: center; gap: 2rem"] {
-    gap: 1rem !important;
+  /* Profile header adjustments */
+  .profile-header {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  section div[style*="display: flex; gap: 2rem"] {
-    gap: 1rem !important;
-    flex-wrap: wrap;
+  .profile-avatar {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+  }
+
+  .profile-stats {
+    gap: 0.75rem;
   }
 
   .btn {
@@ -844,10 +887,15 @@ section {
   }
 
   /* Profile avatar extra small */
-  section div[style*="width: 120px; height: 120px"] {
-    width: 50px !important;
-    height: 50px !important;
-    min-width: 50px;
+  .profile-avatar {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+  }
+
+  .tab {
+    padding: 0.5rem 0.4rem;
+    font-size: 0.7rem;
   }
 
   .logo-text {
