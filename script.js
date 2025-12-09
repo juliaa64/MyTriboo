@@ -1,4 +1,4 @@
-// MyTriboo JavaScript - Accessibility and Interactions
+// MyTriboo JavaScript - Accessibility, Interactions and Filtering
 
 // Translations
 const translations = {
@@ -322,6 +322,46 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
   })
+
+  // --- FILTRADO DE EVENTOS ---
+  const filterButtons = document.querySelectorAll(".filter-btn")
+  const eventCards = document.querySelectorAll(".event-card")
+
+  if (filterButtons.length > 0 && eventCards.length > 0) {
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        // 1. Gestionar estilos de los botones (visual)
+        // Quitamos el estilo 'activo' (btn-primary) de todos y los ponemos en secundario
+        filterButtons.forEach((btn) => {
+          btn.classList.remove("btn-primary")
+          btn.classList.add("btn-secondary")
+        })
+
+        // Ponemos el estilo 'activo' solo al botón clicado
+        button.classList.remove("btn-secondary")
+        button.classList.add("btn-primary")
+
+        // 2. Obtener la categoría seleccionada
+        const category = button.getAttribute("data-category")
+
+        // 3. Filtrar las tarjetas
+        eventCards.forEach((card) => {
+          // Si es "all" o la categoría coincide, mostramos. Si no, ocultamos.
+          if (category === "all" || card.getAttribute("data-category") === category) {
+            card.style.display = "block"
+            // Animación suave de entrada
+            card.style.opacity = "0"
+            card.animate([{ opacity: 0 }, { opacity: 1 }], {
+              duration: 300,
+              fill: "forwards",
+            })
+          } else {
+            card.style.display = "none"
+          }
+        })
+      })
+    })
+  }
 })
 
 function setTheme(theme) {

@@ -8,7 +8,6 @@
 </head>
 <body data-theme="light" class="smooth-scroll">
     
-    <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <div class="logo-section">
@@ -37,7 +36,6 @@
         </div>
     </nav>
 
-    <!-- Accessibility Panel -->
     <div id="accessibility-panel" class="accessibility-panel">
         <h3 data-translate="accessibility_title">Accesibilidad</h3>
         
@@ -60,32 +58,29 @@
         </div>
     </div>
 
-    <!-- Events Header -->
     <section style="padding-top: 8rem; padding-bottom: 2rem;">
         <div class="container">
             <h1 style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem;" data-translate="events_title">Tablón de Eventos</h1>
             <p style="font-size: 1.25rem; opacity: 0.8; margin-bottom: 2rem;" data-translate="events_subtitle">Descubre eventos según tus intereses</p>
             
-            <!-- Filters -->
-            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem;">
-                <button class="btn btn-secondary" style="padding: 0.5rem 1rem;" data-translate="filter_all">Todos</button>
-                <button class="btn btn-secondary" style="padding: 0.5rem 1rem;">🔬 Ciencia</button>
-                <button class="btn btn-secondary" style="padding: 0.5rem 1rem;">⚽ Deportes</button>
-                <button class="btn btn-secondary" style="padding: 0.5rem 1rem;">🎵 Música</button>
-                <button class="btn btn-secondary" style="padding: 0.5rem 1rem;">🎞️ Cine</button>
-                <button class="btn btn-secondary" style="padding: 0.5rem 1rem;">💻 Tecnología</button>
-                <button class="btn btn-secondary" style="padding: 0.5rem 1rem;">📚 Literatura</button>
+            <div class="filters-container" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem;">
+                <button class="btn btn-primary filter-btn" data-category="all" data-translate="filter_all">Todos</button>
+                
+                <button class="btn btn-secondary filter-btn" data-category="ciencia">🔬 Ciencia</button>
+                <button class="btn btn-secondary filter-btn" data-category="deportes">⚽ Deportes</button>
+                <button class="btn btn-secondary filter-btn" data-category="musica">🎵 Música</button>
+                <button class="btn btn-secondary filter-btn" data-category="arte">🎨 Arte</button>
+                <button class="btn btn-secondary filter-btn" data-category="tecnologia">💻 Tecnología</button>
+                <button class="btn btn-secondary filter-btn" data-category="literatura">📚 Literatura</button>
             </div>
         </div>
     </section>
 
-    <!-- Events Grid -->
     <section style="padding-top: 0;">
         <div class="container">
             <div class="grid grid-2">
                 
-                <!-- Event Card 1 -->
-                <div class="event-card">
+                <div class="event-card" data-category="ciencia">
                     <img src="/placeholder.svg?height=200&width=400" alt="Evento" class="event-image">
                     <div class="event-content">
                         <span class="category-badge">🔬 Ciencia</span>
@@ -100,8 +95,7 @@
                     </div>
                 </div>
 
-                <!-- Event Card 2 -->
-                <div class="event-card">
+                <div class="event-card" data-category="deportes">
                     <img src="/placeholder.svg?height=200&width=400" alt="Evento" class="event-image">
                     <div class="event-content">
                         <span class="category-badge">⚽ Deportes</span>
@@ -116,8 +110,7 @@
                     </div>
                 </div>
 
-                <!-- Event Card 3 -->
-                <div class="event-card">
+                <div class="event-card" data-category="musica">
                     <img src="/placeholder.svg?height=200&width=400" alt="Evento" class="event-image">
                     <div class="event-content">
                         <span class="category-badge">🎵 Música</span>
@@ -132,8 +125,7 @@
                     </div>
                 </div>
 
-                <!-- Event Card 4 -->
-                <div class="event-card">
+                <div class="event-card" data-category="arte">
                     <img src="/placeholder.svg?height=200&width=400" alt="Evento" class="event-image">
                     <div class="event-content">
                         <span class="category-badge">🎨 Arte</span>
@@ -143,13 +135,12 @@
                             <span>📍 Sevilla</span>
                             <span>👥 35 asistentes</span>
                         </div>
-                        <p class="event-description">Obras de artistas locales que desafían la percepción. Inauguraión con vino y networking.</p>
+                        <p class="event-description">Obras de artistas locales que desafían la percepción. Inauguración con vino y networking.</p>
                         <button class="btn btn-primary" style="width: 100%;" data-translate="btn_view_details">Ver detalles</button>
                     </div>
                 </div>
 
-                <!-- Event Card 5 -->
-                <div class="event-card">
+                <div class="event-card" data-category="tecnologia">
                     <img src="/placeholder.svg?height=200&width=400" alt="Evento" class="event-image">
                     <div class="event-content">
                         <span class="category-badge">💻 Tecnología</span>
@@ -164,8 +155,7 @@
                     </div>
                 </div>
 
-                <!-- Event Card 6 -->
-                <div class="event-card">
+                <div class="event-card" data-category="literatura">
                     <img src="/placeholder.svg?height=200&width=400" alt="Evento" class="event-image">
                     <div class="event-content">
                         <span class="category-badge">📚 Literatura</span>
@@ -184,7 +174,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
