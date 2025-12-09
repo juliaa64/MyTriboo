@@ -613,6 +613,12 @@ section {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .nav-container {
@@ -675,7 +681,8 @@ section {
   }
 
   .grid-2,
-  .grid-3 {
+  .grid-3,
+  .features-grid {
     grid-template-columns: 1fr;
   }
 
