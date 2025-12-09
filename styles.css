@@ -664,6 +664,11 @@ section {
     padding: 3rem 0 !important;
   }
 
+  /* Adjust top padding for first sections to avoid navbar overlap */
+  section[style*="padding-top: 8rem"] {
+    padding-top: 6rem !important;
+  }
+
   .container {
     padding: 0 1rem;
   }
@@ -798,6 +803,11 @@ section {
 
   h2 {
     font-size: 1.5rem !important;
+  }
+
+  /* Adjust top padding for first sections in smaller screens */
+  section[style*="padding-top: 8rem"] {
+    padding-top: 5rem !important;
   }
 
   .tab {
