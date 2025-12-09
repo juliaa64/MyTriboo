@@ -323,31 +323,65 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  // --- FILTRADO DE EVENTOS ---
+  // --- FILTRADO DE EVENTOS CON SELECCIÓN MÚLTIPLE ---
   const filterButtons = document.querySelectorAll(".filter-btn")
   const eventCards = document.querySelectorAll(".event-card")
 
   if (filterButtons.length > 0 && eventCards.length > 0) {
+    // Array para mantener las categorías seleccionadas
+    let selectedCategories = []
+
     filterButtons.forEach((button) => {
       button.addEventListener("click", () => {
-        // 1. Gestionar estilos de los botones (visual)
-        // Quitamos el estilo 'activo' (btn-primary) de todos y los ponemos en secundario
-        filterButtons.forEach((btn) => {
-          btn.classList.remove("btn-primary")
-          btn.classList.add("btn-secondary")
-        })
-
-        // Ponemos el estilo 'activo' solo al botón clicado
-        button.classList.remove("btn-secondary")
-        button.classList.add("btn-primary")
-
-        // 2. Obtener la categoría seleccionada
         const category = button.getAttribute("data-category")
 
-        // 3. Filtrar las tarjetas
+        // Si se hace clic en "Todos"
+        if (category === "all") {
+          // Desactivar todas las categorías seleccionadas
+          selectedCategories = []
+          
+          // Resetear estilos: "Todos" activo, resto secundario
+          filterButtons.forEach((btn) => {
+            btn.classList.remove("btn-primary")
+            btn.classList.add("btn-secondary")
+          })
+          button.classList.remove("btn-secondary")
+          button.classList.add("btn-primary")
+        } else {
+          // Si se selecciona una categoría específica, desactivar "Todos"
+          const allButton = document.querySelector('.filter-btn[data-category="all"]')
+          if (allButton) {
+            allButton.classList.remove("btn-primary")
+            allButton.classList.add("btn-secondary")
+          }
+
+          // Toggle de la categoría seleccionada
+          const index = selectedCategories.indexOf(category)
+          if (index > -1) {
+            // Si ya está seleccionada, la quitamos
+            selectedCategories.splice(index, 1)
+            button.classList.remove("btn-primary")
+            button.classList.add("btn-secondary")
+          } else {
+            // Si no está seleccionada, la agregamos
+            selectedCategories.push(category)
+            button.classList.remove("btn-secondary")
+            button.classList.add("btn-primary")
+          }
+
+          // Si no hay categorías seleccionadas, activar "Todos"
+          if (selectedCategories.length === 0 && allButton) {
+            allButton.classList.remove("btn-secondary")
+            allButton.classList.add("btn-primary")
+          }
+        }
+
+        // Filtrar las tarjetas según las categorías seleccionadas
         eventCards.forEach((card) => {
-          // Si es "all" o la categoría coincide, mostramos. Si no, ocultamos.
-          if (category === "all" || card.getAttribute("data-category") === category) {
+          const cardCategory = card.getAttribute("data-category")
+          
+          // Mostrar si: no hay categorías seleccionadas O la categoría de la tarjeta está en el array
+          if (selectedCategories.length === 0 || selectedCategories.includes(cardCategory)) {
             card.style.display = ""
             // Animación suave de entrada
             card.style.opacity = "0"
