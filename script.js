@@ -383,14 +383,10 @@ document.addEventListener("DOMContentLoaded", () => {
           // Mostrar si: no hay categorías seleccionadas O la categoría de la tarjeta está en el array
           if (selectedCategories.length === 0 || selectedCategories.includes(cardCategory)) {
             card.style.display = ""
-            // Animación suave de entrada
-            card.style.opacity = "0"
-            card.animate([{ opacity: 0 }, { opacity: 1 }], {
-              duration: 300,
-              fill: "forwards",
-            })
+            card.style.opacity = "1"
           } else {
             card.style.display = "none"
+            card.style.opacity = "0"
           }
         })
       })
