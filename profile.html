@@ -126,22 +126,22 @@
                         <form>
                             <div class="form-group">
                                 <label data-translate="label_name">Nombre completo</label>
-                                <input type="text" value="Juan Pérez" placeholder="Tu nombre">
+                                <input type="text" value="Juan Pérez" data-placeholder="placeholder_name" placeholder="Tu nombre">
                             </div>
 
                             <div class="form-group">
                                 <label data-translate="label_email">Correo electrónico</label>
-                                <input type="email" value="juan@example.com" placeholder="tu@email.com">
+                                <input type="email" value="juan@example.com" data-placeholder="placeholder_email" placeholder="tu@email.com">
                             </div>
 
                             <div class="form-group">
                                 <label data-translate="label_bio">Biografía</label>
-                                <textarea data-placeholder="profile_bio_placeholder">Apasionado de la ciencia y la tecnología. Me encanta conectar con personas que comparten mis intereses.</textarea>
+                                <textarea data-placeholder="placeholder_bio" data-translate="profile_bio_content" placeholder="Cuéntanos sobre ti...">Apasionado de la ciencia y la tecnología. Me encanta conectar con personas que comparten mis intereses.</textarea>
                             </div>
 
                             <div class="form-group">
                                 <label data-translate="label_location">Ubicación</label>
-                                <input type="text" value="Madrid, España" placeholder="Ciudad, País">
+                                <input type="text" value="Madrid, España" data-placeholder="placeholder_location" placeholder="Ciudad, País">
                             </div>
 
                             <div class="form-group">
@@ -314,7 +314,7 @@
                 </div>
 
                 <div>
-                    <!-- Post Card Example -->
+                    <!-- Post Card 1 -->
                     <div class="post-card" style="margin-bottom: 2rem;">
                         <div class="post-content">
                             <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
@@ -324,19 +324,46 @@
                                         <div style="font-weight: 600;">Juan Pérez (<span data-translate="profile_you">Tú</span>)</div>
                                         <div class="post-meta" style="margin: 0;">
                                             <span data-translate="category_science">🔬 Ciencia</span>
-                                            <span>• 3d</span>
+                                            <span>• <span data-translate="profile_post1_time">3d</span></span>
                                         </div>
                                     </div>
                                 </div>
                                 <div style="display: flex; gap: 0.5rem;">
-                                    <button class="icon-btn" style="width: 32px; height: 32px;" title="Editar">✏️</button>
-                                    <button class="icon-btn" style="width: 32px; height: 32px;" title="Eliminar">🗑️</button>
+                                    <button class="icon-btn" style="width: 32px; height: 32px;" data-translate-title="btn_edit" title="Editar">✏️</button>
+                                    <button class="icon-btn" style="width: 32px; height: 32px;" data-translate-title="btn_delete" title="Eliminar">🗑️</button>
                                 </div>
                             </div>
-                            <p class="post-description" data-translate="profile_post_content">Mi experiencia en el último workshop de física cuántica fue increíble. Aprendí conceptos fascinantes sobre entrelazamiento cuántico.</p>
+                            <p class="post-description" data-translate="profile_post1_content">Mi experiencia en el último workshop de física cuántica fue increíble. Aprendí conceptos fascinantes sobre entrelazamiento cuántico.</p>
                             <div style="display: flex; gap: 2rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--current-border);">
                                 <span style="display: flex; align-items: center; gap: 0.5rem;">❤️ <span>15 <span data-translate="likes_count">likes</span></span></span>
                                 <span style="display: flex; align-items: center; gap: 0.5rem;">💬 <span>4 <span data-translate="comments_count">comentarios</span></span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Post Card 2 -->
+                    <div class="post-card" style="margin-bottom: 2rem;">
+                        <div class="post-content">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));"></div>
+                                    <div>
+                                        <div style="font-weight: 600;">Juan Pérez (<span data-translate="profile_you">Tú</span>)</div>
+                                        <div class="post-meta" style="margin: 0;">
+                                            <span data-translate="category_tech">💻 Tecnología</span>
+                                            <span>• <span data-translate="profile_post2_time">1sem</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <button class="icon-btn" style="width: 32px; height: 32px;" data-translate-title="btn_edit" title="Editar">✏️</button>
+                                    <button class="icon-btn" style="width: 32px; height: 32px;" data-translate-title="btn_delete" title="Eliminar">🗑️</button>
+                                </div>
+                            </div>
+                            <p class="post-description" data-translate="profile_post2_content">Acabo de terminar mi proyecto de domótica casera. Ahora puedo controlar las luces y la temperatura desde el móvil. ¡La tecnología es increíble! 🏠💡</p>
+                            <div style="display: flex; gap: 2rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--current-border);">
+                                <span style="display: flex; align-items: center; gap: 0.5rem;">❤️ <span>28 <span data-translate="likes_count">likes</span></span></span>
+                                <span style="display: flex; align-items: center; gap: 0.5rem;">💬 <span>9 <span data-translate="comments_count">comentarios</span></span></span>
                             </div>
                         </div>
                     </div>

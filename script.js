@@ -111,7 +111,17 @@ const translations = {
     profile_member_since: "Miembro desde",
     profile_you: "Tú",
     profile_post_content: "Mi experiencia en el último workshop de física cuántica fue increíble. Aprendí conceptos fascinantes sobre entrelazamiento cuántico.",
+    profile_post1_content: "Mi experiencia en el último workshop de física cuántica fue increíble. Aprendí conceptos fascinantes sobre entrelazamiento cuántico.",
+    profile_post1_time: "3d",
+    profile_post2_content: "Acabo de terminar mi proyecto de domótica casera. Ahora puedo controlar las luces y la temperatura desde el móvil. ¡La tecnología es increíble! 🏠💡",
+    profile_post2_time: "1sem",
     btn_add: "+ Agregar",
+    // Placeholders
+    placeholder_name: "Tu nombre",
+    placeholder_email: "tu@email.com",
+    placeholder_bio: "Cuéntanos sobre ti...",
+    placeholder_location: "Ciudad, País",
+    profile_bio_content: "Apasionado de la ciencia y la tecnología. Me encanta conectar con personas que comparten mis intereses.",
     // Categories
     category_science: "🔬 Ciencia",
     category_sports: "⚽ Deportes",
@@ -194,6 +204,37 @@ const translations = {
     created_by_you_badge: "★ Creado por ti",
     // Connections
     friends_since: "Amigos desde",
+    // Chats
+    chat1_name: "María González",
+    chat1_preview: "¡Gracias por venir al evento! 🔬",
+    chat1_time: "10:30",
+    chat2_name: "Grupo: Fútbol Barcelona ⚽",
+    chat2_preview: "Carlos: Nos vemos el domingo a las 10",
+    chat2_time: "Ayer",
+    chat3_name: "Laura Pérez",
+    chat3_preview: "Te paso el enlace de la banda 🎵",
+    chat3_time: "Ayer",
+    chat4_name: "Grupo: Workshop IA 💻",
+    chat4_preview: "Ana compartió un documento",
+    chat4_time: "2d",
+    chat5_name: "Javier Moreno",
+    chat5_preview: "Oye, ¿tienes el código del proyecto?",
+    chat5_time: "3d",
+    chat6_name: "Grupo: Club de Lectura 📚",
+    chat6_preview: "Pedro: ¿Qué os pareció el final?",
+    chat6_time: "4d",
+    chat7_name: "Sofía Ramírez",
+    chat7_preview: "Perfecto, nos vemos allí 👍",
+    chat7_time: "5d",
+    chat8_name: "Grupo: Cine Clásico 🎬",
+    chat8_preview: "Luis envió una foto",
+    chat8_time: "1sem",
+    chat9_name: "Miguel Torres",
+    chat9_preview: "¡Muchas gracias por la recomendación!",
+    chat9_time: "1sem",
+    chat10_name: "Elena Díaz",
+    chat10_preview: "Nos conectamos pronto 😊",
+    chat10_time: "2sem",
   },
   en: {
     nav_home: "Home",
@@ -304,7 +345,17 @@ const translations = {
     profile_member_since: "Member since",
     profile_you: "You",
     profile_post_content: "My experience at the last quantum physics workshop was incredible. I learned fascinating concepts about quantum entanglement.",
+    profile_post1_content: "My experience at the last quantum physics workshop was incredible. I learned fascinating concepts about quantum entanglement.",
+    profile_post1_time: "3d",
+    profile_post2_content: "Just finished my home automation project. Now I can control the lights and temperature from my phone. Technology is amazing! 🏠💡",
+    profile_post2_time: "1w",
     btn_add: "+ Add",
+    // Placeholders
+    placeholder_name: "Your name",
+    placeholder_email: "your@email.com",
+    placeholder_bio: "Tell us about yourself...",
+    placeholder_location: "City, Country",
+    profile_bio_content: "Passionate about science and technology. I love connecting with people who share my interests.",
     // Categories
     category_science: "🔬 Science",
     category_sports: "⚽ Sports",
@@ -387,6 +438,37 @@ const translations = {
     created_by_you_badge: "★ Created by you",
     // Connections
     friends_since: "Friends since",
+    // Chats
+    chat1_name: "María González",
+    chat1_preview: "Thanks for coming to the event! 🔬",
+    chat1_time: "10:30",
+    chat2_name: "Group: Barcelona Football ⚽",
+    chat2_preview: "Carlos: See you Sunday at 10",
+    chat2_time: "Yesterday",
+    chat3_name: "Laura Pérez",
+    chat3_preview: "I'll send you the band's link 🎵",
+    chat3_time: "Yesterday",
+    chat4_name: "Group: AI Workshop 💻",
+    chat4_preview: "Ana shared a document",
+    chat4_time: "2d",
+    chat5_name: "Javier Moreno",
+    chat5_preview: "Hey, do you have the project code?",
+    chat5_time: "3d",
+    chat6_name: "Group: Book Club 📚",
+    chat6_preview: "Pedro: What did you think of the ending?",
+    chat6_time: "4d",
+    chat7_name: "Sofía Ramírez",
+    chat7_preview: "Perfect, see you there 👍",
+    chat7_time: "5d",
+    chat8_name: "Group: Classic Cinema 🎬",
+    chat8_preview: "Luis sent a photo",
+    chat8_time: "1w",
+    chat9_name: "Miguel Torres",
+    chat9_preview: "Thanks so much for the recommendation!",
+    chat9_time: "1w",
+    chat10_name: "Elena Díaz",
+    chat10_preview: "Let's connect soon 😊",
+    chat10_time: "2w",
   },
   fr: {
     nav_home: "Accueil",
@@ -496,7 +578,17 @@ const translations = {
     profile_member_since: "Membre depuis",
     profile_you: "Vous",
     profile_post_content: "Mon expérience au dernier atelier de physique quantique était incroyable. J'ai appris des concepts fascinants sur l'intrication quantique.",
+    profile_post1_content: "Mon expérience au dernier atelier de physique quantique était incroyable. J'ai appris des concepts fascinants sur l'intrication quantique.",
+    profile_post1_time: "3j",
+    profile_post2_content: "Je viens de terminer mon projet de domotique. Maintenant je peux contrôler les lumières et la température depuis mon téléphone. La technologie est incroyable! 🏠💡",
+    profile_post2_time: "1sem",
     btn_add: "+ Ajouter",
+    // Placeholders
+    placeholder_name: "Votre nom",
+    placeholder_email: "votre@email.com",
+    placeholder_bio: "Parlez-nous de vous...",
+    placeholder_location: "Ville, Pays",
+    profile_bio_content: "Passionné par la science et la technologie. J'adore me connecter avec des personnes qui partagent mes intérêts.",
     // Categories
     category_science: "🔬 Science",
     category_sports: "⚽ Sports",
@@ -579,6 +671,37 @@ const translations = {
     created_by_you_badge: "★ Créé par vous",
     // Connections
     friends_since: "Amis depuis",
+    // Chats
+    chat1_name: "María González",
+    chat1_preview: "Merci d'être venu à l'événement! 🔬",
+    chat1_time: "10:30",
+    chat2_name: "Groupe: Football Barcelone ⚽",
+    chat2_preview: "Carlos: On se voit dimanche à 10h",
+    chat2_time: "Hier",
+    chat3_name: "Laura Pérez",
+    chat3_preview: "Je t'envoie le lien du groupe 🎵",
+    chat3_time: "Hier",
+    chat4_name: "Groupe: Atelier IA 💻",
+    chat4_preview: "Ana a partagé un document",
+    chat4_time: "2j",
+    chat5_name: "Javier Moreno",
+    chat5_preview: "Hé, tu as le code du projet?",
+    chat5_time: "3j",
+    chat6_name: "Groupe: Club de Lecture 📚",
+    chat6_preview: "Pedro: Qu'avez-vous pensé de la fin?",
+    chat6_time: "4j",
+    chat7_name: "Sofía Ramírez",
+    chat7_preview: "Parfait, on se voit là-bas 👍",
+    chat7_time: "5j",
+    chat8_name: "Groupe: Cinéma Classique 🎬",
+    chat8_preview: "Luis a envoyé une photo",
+    chat8_time: "1sem",
+    chat9_name: "Miguel Torres",
+    chat9_preview: "Merci beaucoup pour la recommandation!",
+    chat9_time: "1sem",
+    chat10_name: "Elena Díaz",
+    chat10_preview: "On se connecte bientôt 😊",
+    chat10_time: "2sem",
   },
   de: {
     nav_home: "Startseite",
@@ -688,7 +811,17 @@ const translations = {
     profile_member_since: "Mitglied seit",
     profile_you: "Du",
     profile_post_content: "Meine Erfahrung beim letzten Quantenphysik-Workshop war unglaublich. Ich habe faszinierende Konzepte über Quantenverschränkung gelernt.",
+    profile_post1_content: "Meine Erfahrung beim letzten Quantenphysik-Workshop war unglaublich. Ich habe faszinierende Konzepte über Quantenverschränkung gelernt.",
+    profile_post1_time: "3T",
+    profile_post2_content: "Gerade mein Smart-Home-Projekt abgeschlossen. Jetzt kann ich Lichter und Temperatur vom Handy aus steuern. Technologie ist unglaublich! 🏠💡",
+    profile_post2_time: "1Wo",
     btn_add: "+ Hinzufügen",
+    // Placeholders
+    placeholder_name: "Ihr Name",
+    placeholder_email: "ihre@email.com",
+    placeholder_bio: "Erzählen Sie uns von sich...",
+    placeholder_location: "Stadt, Land",
+    profile_bio_content: "Begeistert von Wissenschaft und Technologie. Ich liebe es, mich mit Menschen zu verbinden, die meine Interessen teilen.",
     // Categories
     category_science: "🔬 Wissenschaft",
     category_sports: "⚽ Sport",
@@ -771,6 +904,37 @@ const translations = {
     created_by_you_badge: "★ Von Ihnen erstellt",
     // Connections
     friends_since: "Freunde seit",
+    // Chats
+    chat1_name: "María González",
+    chat1_preview: "Danke fürs Kommen zur Veranstaltung! 🔬",
+    chat1_time: "10:30",
+    chat2_name: "Gruppe: Fußball Barcelona ⚽",
+    chat2_preview: "Carlos: Wir sehen uns Sonntag um 10",
+    chat2_time: "Gestern",
+    chat3_name: "Laura Pérez",
+    chat3_preview: "Ich schicke dir den Link der Band 🎵",
+    chat3_time: "Gestern",
+    chat4_name: "Gruppe: KI-Workshop 💻",
+    chat4_preview: "Ana hat ein Dokument geteilt",
+    chat4_time: "2T",
+    chat5_name: "Javier Moreno",
+    chat5_preview: "Hey, hast du den Projektcode?",
+    chat5_time: "3T",
+    chat6_name: "Gruppe: Buchclub 📚",
+    chat6_preview: "Pedro: Was haltet ihr vom Ende?",
+    chat6_time: "4T",
+    chat7_name: "Sofía Ramírez",
+    chat7_preview: "Perfekt, wir sehen uns dort 👍",
+    chat7_time: "5T",
+    chat8_name: "Gruppe: Klassisches Kino 🎬",
+    chat8_preview: "Luis hat ein Foto gesendet",
+    chat8_time: "1Wo",
+    chat9_name: "Miguel Torres",
+    chat9_preview: "Vielen Dank für die Empfehlung!",
+    chat9_time: "1Wo",
+    chat10_name: "Elena Díaz",
+    chat10_preview: "Wir verbinden uns bald 😊",
+    chat10_time: "2Wo",
   },
 }
 
@@ -1025,7 +1189,21 @@ function setLanguage(lang) {
   elements.forEach((element) => {
     const key = element.getAttribute("data-translate")
     if (translations[lang] && translations[lang][key]) {
-      element.textContent = translations[lang][key]
+      // For textarea, update the value/content
+      if (element.tagName === "TEXTAREA") {
+        element.value = translations[lang][key]
+      } else {
+        element.textContent = translations[lang][key]
+      }
+    }
+  })
+
+  // Update all elements with data-placeholder attribute
+  const placeholderElements = document.querySelectorAll("[data-placeholder]")
+  placeholderElements.forEach((element) => {
+    const key = element.getAttribute("data-placeholder")
+    if (translations[lang] && translations[lang][key]) {
+      element.placeholder = translations[lang][key]
     }
   })
 }
