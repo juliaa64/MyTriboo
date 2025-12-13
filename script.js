@@ -191,6 +191,7 @@ const translations = {
     profile_bio_placeholder: "Escribe algo sobre ti...",
     profile_location_placeholder: "Tu ciudad",
     profile_interests_placeholder: "Ciencia, Tecnología, Literatura",
+    placeholder_search_users: "Buscar usuarios...",
     // Profile events
     profile_event1_title: "Festival de Jazz en Vivo",
     profile_event1_date: "10 de Febrero",
@@ -427,6 +428,7 @@ const translations = {
     profile_bio_placeholder: "Write something about yourself...",
     profile_location_placeholder: "Your city",
     profile_interests_placeholder: "Science, Technology, Literature",
+    placeholder_search_users: "Search users...",
     // Profile events
     profile_event1_title: "Live Jazz Festival",
     profile_event1_date: "February 10",
@@ -662,6 +664,7 @@ const translations = {
     profile_bio_placeholder: "Écrivez quelque chose sur vous...",
     profile_location_placeholder: "Votre ville",
     profile_interests_placeholder: "Science, Technologie, Littérature",
+    placeholder_search_users: "Rechercher des utilisateurs...",
     // Profile events
     profile_event1_title: "Festival de Jazz en Direct",
     profile_event1_date: "10 Février",
@@ -897,6 +900,7 @@ const translations = {
     profile_bio_placeholder: "Schreiben Sie etwas über sich...",
     profile_location_placeholder: "Ihre Stadt",
     profile_interests_placeholder: "Wissenschaft, Technologie, Literatur",
+    placeholder_search_users: "Benutzer suchen...",
     // Profile events
     profile_event1_title: "Live-Jazz-Festival",
     profile_event1_date: "10. Februar",
